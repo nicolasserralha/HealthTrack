@@ -1,7 +1,9 @@
 package br.com.healthtrack.factory;
 
+import br.com.healthtrack.dao.AlimentoDAO;
 import br.com.healthtrack.dao.AtividadeDAO;
 import br.com.healthtrack.dao.PesoDAO;
+import br.com.healthtrack.impl.IAlimentoDAO;
 import br.com.healthtrack.impl.IAtividadeDAO;
 import br.com.healthtrack.impl.IPesoDAO;
 import br.com.healthtrack.dao.UsuarioDAO;
@@ -22,4 +24,7 @@ public class DAOFactory {
 		return new AtividadeDAO();
 	}
   
+	public IAlimentoDAO getAlimentoDAO() {
+		return new AlimentoDAO();
+	}
 }
