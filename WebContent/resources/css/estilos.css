@@ -1,0 +1,72 @@
+.huge{
+	font-size: 60px;
+}
+
+#container-senha{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#perfil{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+#sobre-paineis {
+	margin-top:20px;
+}
+
+.titulo-depoimento {
+	background-color: #0275D8;
+	padding-top: 25px;
+	padding-bottom: 25px;
+	color: #FFF;
+	margin-bottom: 0px;
+	font-size: 24px;
+}
+
+.panel-gray{
+	background-color: #333 !important;
+	color: #FFF !important;
+}
+
+
+.panel-heading h3:first-child {
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+
+#container-dicas {
+background-color: #333;
+color: #FFF;
+margin-bottom: 20px;
+padding-top: 10px;
+padding-bottom: 10px;
+}
+
+#container-dicas h2:first-child {
+	margin-bottom: 20px;
+}
+
+
+p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+header {
+  position: relative;
+  width: 100%;
+  min-height: auto;
+  overflow-y: hidden;
+  color: white;
+}
+
+form {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #333;
+  padding:20px;
+  text-align: left;
+  max-width: 60%;
+}

@@ -1,0 +1,139 @@
+.blue{
+  background-color: #7386D5 !important;
+  color: #fff !important; 
+  }
+
+form {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #333;
+  padding:50px;
+  text-align: left;
+}
+
+.btn-outline {
+  color: white;
+  border-color: #333;
+  border: 1px solid;
+}
+.btn-outline2 {
+  color: #333;
+  border-color: #333;
+  border: 1px solid;
+}
+.btn-outline2:focus, .btn-outline2:active, .btn-outline2.active {
+  color: #333;
+  background-color: #333;
+  border-color: #333;
+}
+.btn-outline2:hover{
+  color: #FFF;
+  background-color: #333;
+  border-color: #FFF;
+}
+.btn-outline:hover, .btn-outline:focus, .btn-outline:active, .btn-outline.active {
+  color: white;
+  background-color: #333;
+  border-color: #333;
+}
+.btn {
+  font-family: 'Lato', 'Helvetica', 'Arial', 'sans-serif';
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 300px;
+}
+.btn-xl {
+  padding: 15px 45px;
+  font-size: 11px;
+}
+
+
+.bg-gray {
+  color: #fff;
+  background-color: #777;
+}
+
+a.bg-primary:hover,
+a.bg-primary:focus {
+  background-color: #286090;
+}
+
+#content {
+    padding: 20px 0px 20px 0px;
+    min-height: 100vh;
+    width: 100%;
+    transition: all 0.3s;
+    
+}
+
+#fundo{
+	background: url("http://localhost:8080/HealthTrackOut/resources/img/man_1920.jpg"), #333;
+	position: relative;
+	min-height: 120vh;
+	overflow-y: hidden;
+	width: 100%;
+	background-repeat: no-repeat;
+	margin-top: 40px;
+}
+
+.top{
+	margin-top: 40vh;
+	text-align: center;
+	color:white !important;
+	}
+
+header .header-content {
+  text-align: center !important;
+  margin-top: 100px !important;
+  padding: 150px 0 50px;
+  position: relative;
+}
+header .header-content .header-content-inner {
+  position: relative;
+  max-width: 500px;
+  margin: 0 auto;
+}
+header .header-content .header-content-inner h1 {
+  margin-top: 0;
+  margin-bottom: 30px;
+  font-size: 30px;
+}
+header .header-content .header-content-inner .list-badges {
+  margin-bottom: 25px;
+}
+header .header-content .header-content-inner .list-badges img {
+  height: 50px;
+  margin-bottom: 25px;
+}
+header .device-container {
+  max-width: 300px;
+  margin: 0 auto 100px;
+}
+header .device-container .screen img {
+  border-radius: 3px;
+}
+
+section {
+  padding: 100px 0;
+}
+section h2 {
+  font-size: 50px;
+}
+section.template {
+  padding: 150px 0;
+  position: relative;
+}
+section.template h2 {
+  margin-top: 0;
+  font-size: 50px;
+}
+section.template .badges .badge-link {
+  display: block;
+  margin-bottom: 25px;
+}
+section.template .badges .badge-link:last-child {
+  margin-bottom: 0;
+}
+section.template .badges .badge-link img {
+  height: 60px;
+}
