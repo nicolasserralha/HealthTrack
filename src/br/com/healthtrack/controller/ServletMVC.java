@@ -29,7 +29,10 @@ public class ServletMVC extends HttpServlet {
 				
 		usuario.setNm_usuario(request.getParameter("nome"));
 		//String nm_usuario = request.getParameter("nome");
-		usuario.setDt_nascimento(request.getParameter("nascimento"));
+		
+		/*usuario.setDt_nascimento(request.getParameter("nascimento"));*/
+		
+		
 		//String dt_nascimento =  request.getParameter("nascimento");
 		usuario.setDs_sexo(request.getParameter("sexo"));
 		//String ds_sexo = request.getParameter("sexo");
@@ -41,7 +44,10 @@ public class ServletMVC extends HttpServlet {
 		//String ds_senha = request.getParameter("senha");
 		
 		request.setAttribute("usuario", usuario);
-		usuarioBo.insereUsuario(usuario);
+		
+		/*usuarioBo.insereUsuario(usuario);*/
+		
+		
 		request.getRequestDispatcher("saida.jsp").forward(request, response);
 /*		request.getRequestDispatcher(
 				usuarioBo.insereUsuario(nm_usuario, dt_nascimento, ds_sexo, nr_altura, ds_email, ds_senha) == true 

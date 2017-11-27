@@ -5,7 +5,7 @@
 	<jsp:attribute name="content">
 	
 	<section id="cadastro">
-		<form>
+		<form method="post" action="cadastrar">
 			<div class="form-group">
 				<label for="nome">Nome:</label>
 				<div class="input-group">
