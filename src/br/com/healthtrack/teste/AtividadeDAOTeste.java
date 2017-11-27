@@ -16,6 +16,19 @@ public class AtividadeDAOTeste {
 		AtividadeBean atividade = new AtividadeBean();
 		List<AtividadeBean> lista = new ArrayList<AtividadeBean>();
 		
+		//Cadastrar nova atividade
+		try {
+			atividade.setCd_cat_atividade(1);
+			atividade.setCd_usuario(1);
+			atividade.setDs_atividade("corrida");
+			atividade.setDt_atividade(Calendar.getInstance());
+			atividade.setNr_caloria(200);
+			atividadeDao.cadastrar(atividade);
+			System.out.println("Atividade de código: " + atividade.getCd_atividade() + " cadastrado com sucesso");
+		} catch (DBException e) {
+			e.printStackTrace();
+		}
+		
 		//LISTAR
 		lista = atividadeDao.listar(1);
 		for (AtividadeBean item : lista) {
@@ -44,18 +57,7 @@ public class AtividadeDAOTeste {
 		}
 		
 
-		//Cadastrar nova atividade
-		try {
-			atividade.setCd_cat_atividade(1);
-			atividade.setCd_usuario(1);
-			atividade.setDs_atividade("corrida");
-			atividade.setDt_atividade(Calendar.getInstance());
-			atividade.setNr_caloria(200);
-			atividadeDao.cadastrar(atividade);
-			System.out.println("Atividade de código: " + atividade.getCd_atividade() + " cadastrado com sucesso");
-		} catch (DBException e) {
-			e.printStackTrace();
-		}
+
 		
 		
 		

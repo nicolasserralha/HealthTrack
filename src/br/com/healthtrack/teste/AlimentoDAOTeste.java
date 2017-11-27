@@ -12,10 +12,15 @@ public class AlimentoDAOTeste {
 	public static void main(String[] args) {
 		
 		IAlimentoDAO dao = DAOFactory.getAlimentoDAO();
-		AlimentoBean alimento = new AlimentoBean(1,1,258,"teste desc", Calendar.getInstance());
+		AlimentoBean alimento = new AlimentoBean();
 		
 		//cadastrar
 		try {
+			alimento.setCd_cat_alimento(1);
+			alimento.setCd_usuario(1);
+			alimento.setDs_alimento("corrida");
+			alimento.setDt_alimento(Calendar.getInstance());
+			alimento.setNr_caloria(200);
 			dao.cadastrar(alimento);
 			System.out.println("ALIMENTO CADASTRADO");
 		} catch (DBException e) {
