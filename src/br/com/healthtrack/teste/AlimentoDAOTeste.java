@@ -16,11 +16,11 @@ public class AlimentoDAOTeste {
 		
 		//cadastrar
 		try {
-			alimento.setCd_cat_alimento(1);
+			alimento.setCd_cat_alimento(2);
 			alimento.setCd_usuario(1);
-			alimento.setDs_alimento("corrida");
+			alimento.setDs_alimento("blablaslealsda");
 			alimento.setDt_alimento(Calendar.getInstance());
-			alimento.setNr_caloria(200);
+			alimento.setNr_caloria(400);
 			dao.cadastrar(alimento);
 			System.out.println("ALIMENTO CADASTRADO");
 		} catch (DBException e) {
