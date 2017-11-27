@@ -41,25 +41,23 @@ public class AlimentoDAO implements IAlimentoDAO {
 
 	@Override
 	public void atualizar(AlimentoBean atividade) throws DBException {
-		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public void remover(int codigo) throws DBException {
-		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public AlimentoBean buscar(int id) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
 	@Override
 	public List<AlimentoBean> listar(int codigoUsuario) {
-		// TODO Auto-generated method stub
+
 		return null;
 	}
 
