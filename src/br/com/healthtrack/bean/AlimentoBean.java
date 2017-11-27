@@ -4,12 +4,36 @@ import java.util.Calendar;
 
 public class AlimentoBean {
 	
+
 	private int cd_alimento;
 	private int cd_usuario;
 	private int cd_cat_alimento;
 	private double nr_caloria;
 	private String ds_alimento;
 	private Calendar dt_alimento;
+	
+	public AlimentoBean() {
+		super();
+	}
+	
+	public AlimentoBean(int cd_alimento, int cd_usuario, int cd_cat_alimento, double nr_caloria, String ds_alimento, Calendar dt_alimento) {
+		super();
+		this.cd_alimento = cd_alimento;
+		this.cd_usuario = cd_usuario;
+		this.cd_cat_alimento = cd_cat_alimento;
+		this.nr_caloria = nr_caloria;
+		this.ds_alimento = ds_alimento;
+		this.dt_alimento = dt_alimento;
+	}
+	
+	public AlimentoBean(int cd_usuario, int cd_cat_alimento, double nr_caloria, String ds_alimento, Calendar dt_alimento) {
+		super();
+		this.cd_usuario = cd_usuario;
+		this.cd_cat_alimento = cd_cat_alimento;
+		this.nr_caloria = nr_caloria;
+		this.ds_alimento = ds_alimento;
+		this.dt_alimento = dt_alimento;
+	}
 	
 	public int getCd_alimento() {
 		return cd_alimento;

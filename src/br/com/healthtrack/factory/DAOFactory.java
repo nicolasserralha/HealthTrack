@@ -20,11 +20,11 @@ public class DAOFactory {
 		return new UsuarioDAO();
 	}
 
-	public IAtividadeDAO getAtividadeDAO() {
+	public static IAtividadeDAO getAtividadeDAO() {
 		return new AtividadeDAO();
 	}
   
-	public IAlimentoDAO getAlimentoDAO() {
+	public static IAlimentoDAO getAlimentoDAO() {
 		return new AlimentoDAO();
 	}
 }

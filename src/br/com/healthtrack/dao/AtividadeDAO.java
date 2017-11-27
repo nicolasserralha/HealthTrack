@@ -16,7 +16,7 @@ public class AtividadeDAO implements IAtividadeDAO{
 	Connection conexao = null;
 	
 	@Override
-	public void cadastrar(AtividadeBean atividade) throws DBException {
+	public void cadastrar(AtividadeBean alimento) throws DBException {
 		PreparedStatement stmt = null;
 		try {
 			conexao = HealthTrackDBManager.getInstance().getConnection();

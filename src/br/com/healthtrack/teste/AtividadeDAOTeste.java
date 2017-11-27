@@ -12,8 +12,7 @@ import br.com.healthtrack.impl.IAtividadeDAO;
 public class AtividadeDAOTeste {
 	public static void main(String[] args) {
 		
-		DAOFactory dao = new DAOFactory();
-		IAtividadeDAO atividadeDao = dao.getAtividadeDAO();
+		IAtividadeDAO atividadeDao = DAOFactory.getAtividadeDAO();
 		AtividadeBean atividade = new AtividadeBean();
 		List<AtividadeBean> lista = new ArrayList<AtividadeBean>();
 		
