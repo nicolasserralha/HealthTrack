@@ -13,7 +13,7 @@ public class PesoBo {
 			peso.setCd_usuario(cd_usuario); //usuario
 			peso.setNr_peso(nr_peso);
 			peso.setDs_peso(ds_peso);
-			peso.setDt_peso(dt_peso);
+			/*peso.setDt_peso(dt_peso);*/
 			return peso;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -24,7 +24,7 @@ public class PesoBo {
 	public PesoBean inserePeso(PesoBean peso){	
 		try {		
 			PesoDAO pesoDao = new PesoDAO();
-			pesoDao.insert(peso);
+			/*pesoDao.insert(peso);*/
 			return peso;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -36,7 +36,7 @@ public class PesoBo {
 		ArrayList<PesoBean> lista = new ArrayList<PesoBean>();
 		try {		
 			PesoDAO pesoDao = new PesoDAO();
-			lista = pesoDao.getAll();
+			/*lista = pesoDao.getAll();*/
 			return lista;
 		} catch (Exception e) {
 			e.printStackTrace();

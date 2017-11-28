@@ -11,30 +11,29 @@
 				<div class="input-group">
 					<span class="input-group-addon"><i
 							class="glyphicon glyphicon-user"></i></span>
-					<input type="text" class="form-control" id="nome"
-							placeholder="Nome completo">
+					<input type="text" class="form-control" name="nome" id="nome" placeholder="Nome completo">
 				</div>
 			</div>
 
 			<div class="form-group">
 				<label for="data-nascimento">Data Nascimento:</label>
 				<div class="input-group">
-					<input type="text" class="form-control" id="data-nascimento" placeholder="dd/mm/aaaa">
+					<input type="text" class="form-control" name="data-nascimento" id="data-nascimento" placeholder="dd/mm/aaaa">
 				</div>
 			</div>
 
  			<div class="form-group">
     			<label for="altura">Altura:</label>
     			<div class="input-group">
-    				<input type="text" class="form-control" id="altura" placeholder="em metros">
+    				<input type="text" class="form-control" name="altura" id="altura" placeholder="em metros">
  				</div>
  			</div>  						
 
 			<div class="form-group">
 				<label for="radio-genero">Gênero:</label>
 				<div class="input-group">
-  					<label class="radio-inline"><input type="radio" name="optradio" id="radio-genero">Masculino</label>
-					<label class="radio-inline"><input type="radio"	name="optradio" id="radio-genero">Feminino</label>
+  					<label class="radio-inline"><input type="radio" name="radio-genero" id="radio-genero">Masculino</label>
+					<label class="radio-inline"><input type="radio"	name="radio-genero" id="radio-genero">Feminino</label>
  				</div>
 			</div>
                    	
@@ -42,13 +41,13 @@
 				<label for="email">Email:</label>
    				<div class="input-group">
    					<span class="input-group-addon" id="basic-addon1">@</span>
-   					<input type="email" class="form-control" id="email" placeholder="Email">
+   					<input type="email" class="form-control" name="email" id="email" placeholder="Email">
 				</div>	
  			</div>
 
 			<div class="form-group">
 			    <label for="pwd">Senha:</label>
-			    <input type="password" class="form-control" id="pwd" placeholder="6 dígitos, entre letras e números">
+			    <input type="password" class="form-control" name="pwd" id="pwd" placeholder="6 dígitos, entre letras e números">
 		  	</div>
 
 		  	<div class="form-group">

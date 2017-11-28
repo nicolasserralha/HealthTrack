@@ -2,6 +2,7 @@ package br.com.healthtrack.bean;
 
 import java.util.Calendar;
 /*import java.io.Serializable;*/
+import br.com.healthtrack.util.CriptografiaUtils;
 
 public class UsuarioBean /*implements Serializable*/ {
 
@@ -26,7 +27,7 @@ public class UsuarioBean /*implements Serializable*/ {
 		this.ds_sexo = ds_sexo;
 		this.nr_altura = nr_altura;
 		this.ds_email = ds_email;
-		this.ds_senha = ds_senha;
+		setDs_senha(ds_senha);
 	}
 	
 	//construtor completo com codigo
@@ -38,7 +39,7 @@ public class UsuarioBean /*implements Serializable*/ {
 		this.ds_sexo = ds_sexo;
 		this.nr_altura = nr_altura;
 		this.ds_email = ds_email;
-		this.ds_senha = ds_senha;
+		setDs_senha(ds_senha);
 	}
 	
 		
@@ -82,8 +83,11 @@ public class UsuarioBean /*implements Serializable*/ {
 		return ds_senha;
 	}
 	public void setDs_senha(String ds_senha) {
-		this.ds_senha = ds_senha;
+		try {
+			this.ds_senha = CriptografiaUtils.criptografar(ds_senha);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
-	
 }
 
