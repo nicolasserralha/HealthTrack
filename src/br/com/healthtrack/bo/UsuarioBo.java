@@ -3,6 +3,7 @@ package br.com.healthtrack.bo;
 import java.util.Calendar;
 
 import br.com.healthtrack.bean.UsuarioBean;
+import br.com.healthtrack.exception.DBException;
 import br.com.healthtrack.factory.DAOFactory;
 import br.com.healthtrack.impl.IUsuarioDAO;
 
@@ -22,7 +23,7 @@ public class UsuarioBo {
 			
 			return usuario;
 			
-		} catch (Exception e) {
+		} catch (DBException e) {
 			e.printStackTrace();
 			return null;
 		}

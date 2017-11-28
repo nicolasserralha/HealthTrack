@@ -1,10 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="index" tagdir="/WEB-INF/tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <index:templateCadastroLogin title="Index">
 	<jsp:attribute name="content">
 	
 	<section id="cadastro">
+	
+		<c:if test="${not empty msg }">
+    		<div class="alert alert-success">${msg}</div>
+  		</c:if>
+		<c:if test="${not empty erro }">
+    		<div class="alert alert-danger">${erro}</div>
+  		</c:if>
+	
 		<form method="post" action="cadastrar">
 			<div class="form-group">
 				<label for="nome">Nome:</label>
@@ -32,8 +41,8 @@
 			<div class="form-group">
 				<label for="radio-genero">Gênero:</label>
 				<div class="input-group">
-  					<label class="radio-inline"><input type="radio" name="radio-genero" id="radio-genero">Masculino</label>
-					<label class="radio-inline"><input type="radio"	name="radio-genero" id="radio-genero">Feminino</label>
+  					<label class="radio-inline"><input type="radio" name="radio-genero" id="radio-genero" value="M">Masculino</label>
+					<label class="radio-inline"><input type="radio"	name="radio-genero" id="radio-genero" value="F">Feminino</label>
  				</div>
 			</div>
                    	

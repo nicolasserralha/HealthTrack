@@ -27,11 +27,12 @@ public class CadastrarUsuarioServlet extends HttpServlet {
       usuarioBo = new UsuarioBo();
     }
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		/*response.getWriter().append("Served at: ").append(request.getContextPath());*/
-	}
+/*	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}*/
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		try{
 			
 			String nm_usuario = request.getParameter("nome");
@@ -46,12 +47,14 @@ public class CadastrarUsuarioServlet extends HttpServlet {
 			String ds_senha = request.getParameter("pwd"); //CHAR(32) NOT NULL,
 			
 			usuarioBo.insereUsuario(nm_usuario, dt_nascimento, ds_sexo, nr_altura, ds_email, ds_senha);
+			request.setAttribute("msg", "Usuário cadastrado com sucesso");
 			
 		}catch(Exception e){
 			e.printStackTrace();
 			request.setAttribute("erro", "Por favor, valide os dados");
 		}
 		
+		request.getRequestDispatcher("cadastro.jsp").forward(request, response);
 	}
 
 }
