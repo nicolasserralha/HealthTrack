@@ -29,11 +29,18 @@ public class UsuarioBo {
 		}
 	}
 	
-	public boolean validaUsuario(String email, String senha){
+	public int validaUsuario(String email, String senha){
 		
 		dao = DAOFactory.getUsuarioDAO();
 		usuario = new UsuarioBean(email, senha);
-		return true;
+		
+		try {
+			dao.validarUsuario(usuario);
+		} catch (DBException e) {
+			e.printStackTrace();
+			return 0;
+		}
+		return usuario.getCd_usuario();
 		
 	}
 	

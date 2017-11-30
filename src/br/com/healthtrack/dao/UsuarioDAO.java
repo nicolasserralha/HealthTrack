@@ -174,5 +174,47 @@ public class UsuarioDAO implements IUsuarioDAO{
 		}
 		return lista;
 	}
+	
+	
+	@Override
+	public UsuarioBean validarUsuario(UsuarioBean usuario) throws DBException{
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+		try {
+			conexao = HealthTrackDBManager.getInstance().getConnection();
+			String sql = "SELECT * FROM T_USUARIO WHERE DS_EMAIL = ?";
+			stmt = conexao.prepareStatement(sql);
+			stmt.setString(1, usuario.getDs_email());
+			rs = stmt.executeQuery();
+			
+			if(rs.next()){
+			
+			int codigo = rs.getInt("CD_USUARIO");
+			String nome = rs.getString("NM_USUARIO");
+			Calendar dt_nascimento = Calendar.getInstance();
+			dt_nascimento.setTime(rs.getDate("DT_NASCIMENTO"));
+			float altura = rs.getFloat("NR_ALTURA");
+			String sexo = rs.getString("DS_SEXO");
+			String email = rs.getString("DS_EMAIL");
+			String senha = rs.getString("DS_SENHA");
+			
+			usuario = new UsuarioBean(codigo, nome, dt_nascimento, sexo, altura, email, senha);
+			
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally { 
+			try {
+				stmt.close();
+				conexao.close();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+		return usuario;
+
+	}
+
 }
 		

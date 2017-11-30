@@ -33,9 +33,12 @@ public class LoginServlet extends HttpServlet {
 	    String email = request.getParameter("email");
 	    String senha = request.getParameter("senha");
 	    
-	    if (usuarioBo.validaUsuario(email, senha)) {
+	    int id = usuarioBo.validaUsuario(email, senha);
+	    
+	    if (id > 0) {
 	      HttpSession session = request.getSession();
 	      session.setAttribute("user", email);
+	      session.setAttribute("id", id);
 	      String mensagem = "Um login foi realizado";
 	      try {
 	        bo.enviarEmail(email, "Login Realizado", mensagem);

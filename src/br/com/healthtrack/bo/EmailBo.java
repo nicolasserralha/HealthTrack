@@ -14,8 +14,8 @@ import br.com.healthtrack.exception.EmailException;
 public class EmailBo {
 
   public void enviarEmail(String destinatario, String assunto, String mensagem) throws EmailException{
-    final String username = "email@gmail.com";
-    final String password = "senha";
+    final String username = "healthtrackfiapapp@gmail.com";
+    final String password = "nicolas123";
 
     Properties props = new Properties();
     props.put("mail.smtp.auth", "true");
