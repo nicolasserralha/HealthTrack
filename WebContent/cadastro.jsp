@@ -58,11 +58,12 @@
 			<div class="form-group">
 			    <label for="pwd">Senha:</label>
 			    <input type="password" class="form-control" name="pwd" id="pwd" placeholder="6 dígitos, entre letras e números" required
-			    pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{4,}$">
+			    pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{4,}$" onchange="form.pwd2.pattern = this.value;">
 		  	</div>
 
 		  	<div class="form-group">
-			    <input type="password" class="form-control" id="pwd" placeholder="Confirmar senha">
+			    <input type="password" class="form-control" id="pwd" name="pwd2" placeholder="Confirmar senha"
+			    onchange="this.setCustomValidity(this.validity.patternMismatch ? 'As senhas não conferem' : '')">
 		  	</div>
 
 		  	<button type="submit" class="btn btn-default">Submit</button>
