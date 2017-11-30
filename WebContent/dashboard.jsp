@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="dashboard" tagdir="/WEB-INF/tags"%>
-<dashboard:templateDashboard title="Dashboard">
+<dashboard:templateLogin title="Dashboard">
 	<jsp:attribute name="content">
 	    
 		<ol class="breadcrumb">
@@ -145,4 +145,4 @@
     <!-- /#page-wrapper -->
 
 	</jsp:attribute>
-</dashboard:templateDashboard>
+</dashboard:templateLogin>

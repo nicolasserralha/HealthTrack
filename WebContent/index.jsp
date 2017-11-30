@@ -35,7 +35,7 @@
 	        </div>
 	    </section>
 		
-		<section id="cadastro" class="template bg-gray text-center">
+<!-- 		<section id="cadastro" class="template bg-gray text-center">
 	        <div class="container">
 	            <div class="row">
 	                <div class="col-md-8 col-md-offset-2">
@@ -132,7 +132,7 @@
 		            </div>
 		        </div>
 		    </div>
-   	 </section>
+   	 </section> -->
 		
 	</jsp:attribute>
 </index:templateCadastroLogin>

@@ -8,14 +8,13 @@
     <title>${title }</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="resources/css/custom.css">
-<!--     <link rel="stylesheet" type="text/css" href="resources/css/landing.css"> -->
     <link rel="stylesheet" type="text/css" href="resources/css/customCL.css">
 	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
 </head>
 <body>
-	<header id="header">
+	<header>
 		<nav class="navbar navbar-default navbar-fixed-top blue">
 	  		<div class="container-fluid">
 		    	<div class="navbar-header blue">
@@ -28,20 +27,26 @@
 			      	<a class="navbar-brand page-scroll blue" href="#header">HealthTrack</a>
 		    	</div>
 
+
 		    	<div class="collapse navbar-collapse blue" id="navbar-collapse-1">
 			      	<ul class="nav navbar-nav blue">
 			      		<li><a href="#header" class="page-scroll blue">Home</a></li>
 			      		<li><a href="#footer" class="page-scroll blue">Contato</a></li>
+			      		<li><a class="page-scroll blue" href="#cadastro">Cadastrar</a></li>
 		      		</ul>
+		      	<!-- Parte da Direita -->
+				<span class="navbar-text text-danger" style="margin-right:10px" >
+	          		${erro }
+	      		</span> 
+		      	<form class="form-inline nav navbar-nav navbar-right" action="logar" method="post">
+		      		<input class="form-control mr-sm-2" type="text" name="email" placeholder="E-mail">
+		        	<input class="form-control mr-sm-2" type="password" name="senha" placeholder="Senha">
+		        	<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Entrar</button>
+		      	</form>
 
-		      		<!-- Parte da Direita -->
-				    <ul class="nav navbar-nav navbar-right blue">
-				       	<li><a class="page-scroll blue" href="#cadastro">Cadastrar</a></li>
-				       	<li><a class="page-scroll blue" href="#login">Entrar</a></li>
-				    </ul>
 				</div><!-- /.navbar-collapse -->
 			</div><!-- /.container-fluid -->
-		</nav>	    
+		</nav>
 	</header>
 	
 	<div class="wrapper">

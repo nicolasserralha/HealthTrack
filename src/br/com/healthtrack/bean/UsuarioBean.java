@@ -42,6 +42,13 @@ public class UsuarioBean /*implements Serializable*/ {
 		setDs_senha(ds_senha);
 	}
 	
+	//construtor p/ login 
+	public UsuarioBean(String email, String senha){
+		super();
+		this.ds_email = email;
+		setDs_senha(senha);
+	}
+	
 		
 	public int getCd_usuario() {
 		return cd_usuario;

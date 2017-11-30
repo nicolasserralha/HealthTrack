@@ -28,4 +28,14 @@ public class UsuarioBo {
 			return null;
 		}
 	}
+	
+	public boolean validaUsuario(String email, String senha){
+		
+		dao = DAOFactory.getUsuarioDAO();
+		usuario = new UsuarioBean(email, senha);
+		return true;
+		
+	}
+	
+	
 }
