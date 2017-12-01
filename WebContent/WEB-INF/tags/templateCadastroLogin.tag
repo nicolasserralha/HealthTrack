@@ -30,7 +30,7 @@
 
 		    	<div class="collapse navbar-collapse blue" id="navbar-collapse-1">
 			      	<ul class="nav navbar-nav blue">
-			      		<li><a href="#header" class="page-scroll blue">Home</a></li>
+			      		<li><a href="index.jsp" class="page-scroll blue">Home</a></li>
 			      		<li><a href="#footer" class="page-scroll blue">Contato</a></li>
 			      		<li><a class="page-scroll blue" href="cadastro.jsp">Cadastrar</a></li>
 		      		</ul>

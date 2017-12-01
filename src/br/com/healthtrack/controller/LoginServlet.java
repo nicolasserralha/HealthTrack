@@ -32,7 +32,7 @@ public class LoginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	    String email = request.getParameter("email");
 	    String senha = request.getParameter("senha");
-	    
+	    boolean teste = false;
 	    int id = usuarioBo.validaUsuario(email, senha);
 	    
 	    if (id > 0) {
@@ -40,15 +40,21 @@ public class LoginServlet extends HttpServlet {
 	      session.setAttribute("user", email);
 	      session.setAttribute("id", id);
 	      String mensagem = "Um login foi realizado";
+	      teste = true;
 	      try {
 	        bo.enviarEmail(email, "Login Realizado", mensagem);
 	      } catch (EmailException e) {
 	        e.printStackTrace();
 	      }
-	    }else {
+	    }
+	    else {
 	      request.setAttribute("erroLogin", "Usuário e/ou senha inválidos");
 	    }
-	    request.getRequestDispatcher("home.jsp").forward(request, response);
-	  }
-
+	    if(teste) {
+	    	request.getRequestDispatcher("dashboard.jsp").forward(request, response);	
+	    }
+	    else{
+	    	request.getRequestDispatcher("index.jsp").forward(request, response);	
+	    }
+	}
 }

@@ -35,14 +35,11 @@ public class UsuarioBo {
 		usuario = new UsuarioBean(email, senha);
 		
 		try {
-			dao.validarUsuario(usuario);
+			usuario = dao.validarUsuario(usuario);
 		} catch (DBException e) {
 			e.printStackTrace();
 			return 0;
 		}
 		return usuario.getCd_usuario();
-		
 	}
-	
-	
 }

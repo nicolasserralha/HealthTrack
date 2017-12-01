@@ -206,9 +206,10 @@ public class UsuarioDAO implements IUsuarioDAO{
 		ResultSet rs = null;
 		try {
 			conexao = HealthTrackDBManager.getInstance().getConnection();
-			String sql = "SELECT * FROM T_USUARIO WHERE DS_EMAIL = ?";
+			String sql = "SELECT * FROM T_USUARIO WHERE DS_EMAIL = ? AND DS_SENHA = ?";
 			stmt = conexao.prepareStatement(sql);
 			stmt.setString(1, usuario.getDs_email());
+			stmt.setString(2, usuario.getDs_senha());
 			rs = stmt.executeQuery();
 			
 			if(rs.next()){
