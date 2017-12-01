@@ -11,4 +11,5 @@ public interface IUsuarioDAO {
 	  UsuarioBean buscar(int id);
 	  List<UsuarioBean> listar();
 	  UsuarioBean validarUsuario(UsuarioBean usuario) throws DBException;
+	  void desativarUsuario(UsuarioBean usuario) throws DBException;
 	}

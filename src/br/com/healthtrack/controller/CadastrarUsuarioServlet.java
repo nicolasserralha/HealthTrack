@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import br.com.healthtrack.bo.UsuarioBo;
+import br.com.healthtrack.exception.DBException;
 
 @WebServlet("/cadastrar")
 public class CadastrarUsuarioServlet extends HttpServlet {
@@ -31,10 +32,9 @@ public class CadastrarUsuarioServlet extends HttpServlet {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}*/
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		try{
-			
+			request.setCharacterEncoding("UTF8");
 			String nm_usuario = request.getParameter("nome");
 			//FORMATACAO DA DATA
 			Calendar dt_nascimento = Calendar.getInstance();
@@ -47,7 +47,7 @@ public class CadastrarUsuarioServlet extends HttpServlet {
 			String ds_senha = request.getParameter("pwd"); //CHAR(32) NOT NULL,
 			
 			usuarioBo.insereUsuario(nm_usuario, dt_nascimento, ds_sexo, nr_altura, ds_email, ds_senha);
-			request.setAttribute("msg", "Usuário cadastrado com sucesso");
+			request.setAttribute("msg", "Usuário cadastrado com sucesso. Faça o Login =)");
 			
 		}catch(Exception e){
 			e.printStackTrace();

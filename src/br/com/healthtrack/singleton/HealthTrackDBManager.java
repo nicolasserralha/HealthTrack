@@ -27,19 +27,3 @@ public class HealthTrackDBManager {
 		return connection;
 	}
 }
-	
-	
-/*	public static Connection obterConexao() {
-		
-		try {
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			Connection conexao = DriverManager.getConnection("jdbc:oracle:thin:SYSTEM/SYSTEM@localhost:1521:XE","SYSTEM", "nicolas");
-			System.out.println("conexao pronta " + conexao);
-			return conexao;
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-			System.out.println(e);
-			return null;
-		}
-	}*/

@@ -12,7 +12,7 @@ public class UsuarioBo {
 	private IUsuarioDAO dao;
 	private UsuarioBean usuario;
 
-	public UsuarioBean insereUsuario(String nm_usuario, Calendar dt_nascimento, String ds_sexo, float nr_altura, String ds_email, String ds_senha){
+	public UsuarioBean insereUsuario(String nm_usuario, Calendar dt_nascimento, String ds_sexo, float nr_altura, String ds_email, String ds_senha) throws DBException, Exception{
 		try {
 			
 			dao = DAOFactory.getUsuarioDAO();
@@ -25,7 +25,7 @@ public class UsuarioBo {
 			
 		} catch (DBException e) {
 			e.printStackTrace();
-			return null;
+			throw new Exception("Erro ao Cadastrar Usuário.");
 		}
 	}
 	

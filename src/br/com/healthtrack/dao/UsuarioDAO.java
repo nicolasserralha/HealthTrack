@@ -21,7 +21,7 @@ public class UsuarioDAO implements IUsuarioDAO{
 		PreparedStatement stmt = null;
 		try {
 			conexao = HealthTrackDBManager.getInstance().getConnection();
-			String sql = "INSERT INTO T_USUARIO (NM_USUARIO, DT_NASCIMENTO, DS_SEXO, NR_ALTURA, DS_EMAIL, DS_SENHA) VALUES (?, ?, ?, ?, ?, ?)";
+			String sql = "INSERT INTO T_USUARIO (NM_USUARIO, DT_NASCIMENTO, DS_SEXO, NR_ALTURA, DS_EMAIL, DS_SENHA, ATIVO) VALUES (?, ?, ?, ?, ?, ?, 1)";
 			stmt = conexao.prepareStatement(sql);
 			stmt.setString(1, usuario.getNm_usuario());
 			java.sql.Date data = new java.sql.Date(usuario.getDt_nascimento().getTimeInMillis());
@@ -72,7 +72,31 @@ public class UsuarioDAO implements IUsuarioDAO{
 			}
 		}
 	}
-
+	
+	
+	@Override
+	public void desativarUsuario(UsuarioBean usuario) throws DBException {
+		PreparedStatement stmt = null;
+		try {
+			conexao = HealthTrackDBManager.getInstance().getConnection();
+			String sql = "UPDATE T_USUARIO SET ATIVO = 0 WHERE CD_USUARIO = ?";
+			stmt = conexao.prepareStatement(sql);
+			stmt.setInt(1, usuario.getCd_usuario());
+			stmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new DBException("Erro ao Desativar o Usuario.");
+		} finally {
+			try {
+				stmt.close();
+				conexao.close();
+			} catch (SQLException e2) {
+				e2.printStackTrace();
+			}
+		}
+	}
+	
+	
 	@Override
 	public void remover(int codigo) throws DBException {
 		PreparedStatement stmt = null;

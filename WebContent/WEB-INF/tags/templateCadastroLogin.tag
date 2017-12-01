@@ -32,11 +32,11 @@
 			      	<ul class="nav navbar-nav blue">
 			      		<li><a href="#header" class="page-scroll blue">Home</a></li>
 			      		<li><a href="#footer" class="page-scroll blue">Contato</a></li>
-			      		<li><a class="page-scroll blue" href="#cadastro">Cadastrar</a></li>
+			      		<li><a class="page-scroll blue" href="cadastro.jsp">Cadastrar</a></li>
 		      		</ul>
 		      	<!-- Parte da Direita -->
 				<span class="navbar-text text-danger" style="margin-right:10px" >
-	          		${erro }
+	          		${erroLogin }
 	      		</span> 
 		      	<form class="form-inline nav navbar-nav navbar-right" action="logar" method="post">
 		      		<input class="form-control mr-sm-2" type="text" name="email" placeholder="E-mail">
