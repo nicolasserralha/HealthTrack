@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="atividade" tagdir="/WEB-INF/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+
 <atividade:template title="Atividade Física">
 	<jsp:attribute name="content">
 		
@@ -39,20 +41,16 @@
 				  		<tbody>
 	
 				  			<!--inicio do registro -->
+				  			
 				  			<c:forEach items="${lista}" var="obj">
+			  						
 						  		<tr>
-								    <td><c:out value="${obj.dt_atividade.getTime()}"></c:out></td>
-								    <td><c:out value="${obj.dt_atividade.getTime()}"></c:out></td> 
-								    <td>
-								    	<select>
-										    <option value="cafe">Caminhada</option>
-										    <option value="almoço">Corrida</option>
-										    <option value="jantar">Pedalada</option>
-										    <option value="lanche">Musculação</option>
-								    	</select>
-								    </td>
+								    <td><fmt:formatDate pattern="dd/MM/yyyy" value="${obj.dt_atividade.getTime()}" /></td>
+								    <td><fmt:formatDate pattern="HH:mm:ss" value="${obj.dt_atividade.getTime()}" /></td>
+									<td><c:out value="${obj.cd_cat_atividade}"></c:out></td>
 								    <td><c:out value="${obj.ds_atividade}"></c:out></td>
 								    <td><c:out value="${obj.nr_caloria}"></c:out></td>
+								    
 								    <td>
 								    	<button type="button" class="btn btn-default btn-sm btn-warning" name="alterar">
 								    		<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
@@ -67,6 +65,7 @@
 							  	</tr>
 							  	<!--fim do registro -->
 							</c:forEach>	
+							
 				    	</tbody>
 			  		</table>
 			    	<div class="container-fluid" id="submit-tabela">

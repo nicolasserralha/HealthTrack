@@ -3,7 +3,7 @@ package br.com.healthtrack.bean;
 import java.util.Calendar;
 
 public class AtividadeBean {
-
+	
 	private int cd_atividade;
 	private int cd_usuario;
 	private int cd_cat_atividade;

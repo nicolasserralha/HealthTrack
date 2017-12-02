@@ -12,8 +12,6 @@ import javax.servlet.http.HttpSession;
 
 import br.com.healthtrack.bo.AtividadeBo;
 import br.com.healthtrack.bean.AtividadeBean;
-import br.com.healthtrack.factory.DAOFactory;
-import br.com.healthtrack.impl.IAtividadeDAO;
 
 /**
  * Servlet implementation class AtividadeServlet
