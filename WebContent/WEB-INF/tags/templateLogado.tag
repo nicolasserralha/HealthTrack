@@ -7,7 +7,8 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>${title }</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="resources/css/customDash.css">
+    <link rel="stylesheet" href="resources/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="resources/css/customCL.css">
 	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
@@ -29,15 +30,15 @@
 
 		    	<div class="collapse navbar-collapse blue" id="navbar-collapse-1">
 			      	<ul class="nav navbar-nav blue">
-			      		<li><a href="#header" class="page-scroll blue">Home</a></li>
+			      		<li><a href="index.jsp" class="page-scroll blue">Home</a></li>
 			      		<li><a href="#footer" class="page-scroll blue">Contato</a></li>
-			      		<li><a class="page-scroll blue" href="#cadastro">Cadastrar</a></li>
+			      		<li><a class="page-scroll blue" href="cadastro.jsp">Cadastrar</a></li>
 		      		</ul>
 		      	<!-- Parte da Direita -->
 				<span class="navbar-text text-danger" style="margin-right:10px" >
-	          		${erro }
+	          		${erroLogin }
 	      		</span> 
-		      	<form class="form-inline nav navbar-nav navbar-right" action="login" method="post">
+		      	<form class="form-inline nav navbar-nav navbar-right" action="logar" method="post">
 		      		<input class="form-control mr-sm-2" type="text" name="email" placeholder="E-mail">
 		        	<input class="form-control mr-sm-2" type="password" name="senha" placeholder="Senha">
 		        	<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Entrar</button>

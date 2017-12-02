@@ -1,6 +1,7 @@
 <%@ tag language="java" pageEncoding="UTF-8"%>
 <%@ attribute name="title" required="true" rtexprvalue="true"%>
 <%@ attribute name="content" fragment="true"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,16 +35,26 @@
 			      		<li><a href="#footer" class="page-scroll blue">Contato</a></li>
 			      		<li><a class="page-scroll blue" href="cadastro.jsp">Cadastrar</a></li>
 		      		</ul>
-		      	<!-- Parte da Direita -->
-				<span class="navbar-text text-danger" style="margin-right:10px" >
-	          		${erroLogin }
-	      		</span> 
-		      	<form class="form-inline nav navbar-nav navbar-right" action="logar" method="post">
+		      		
+		      	<!-- Parte da Direita -->	
+		      	<c:if test="${empty user }">
+			    	<span class="navbar-text text-danger" style="margin-right:10px" >
+			    		${erroLogin }
+			      	</span> 
+			      	
+				<form class="form-inline nav navbar-nav navbar-right" action="logar" method="post">
 		      		<input class="form-control mr-sm-2" type="text" name="email" placeholder="E-mail">
 		        	<input class="form-control mr-sm-2" type="password" name="senha" placeholder="Senha">
 		        	<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Entrar</button>
 		      	</form>
-
+				</c:if>
+			    <c:if test="${not empty user }">
+					<span class="navbar-text navbar-right">
+			    		${user }
+			        	<a href="login" class="btn btn-outline-primary my-2 my-sm-0">Sair</a>
+			      	</span> 
+			    </c:if>	
+		      		
 				</div><!-- /.navbar-collapse -->
 			</div><!-- /.container-fluid -->
 		</nav>
