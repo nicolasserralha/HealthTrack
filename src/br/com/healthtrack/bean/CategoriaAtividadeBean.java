@@ -9,6 +9,12 @@ public class CategoriaAtividadeBean {
 		super();
 	}
 		
+	public CategoriaAtividadeBean(int cd_cat_atividade, String ds_cat_atividade) {
+		super();
+		this.cd_cat_atividade = cd_cat_atividade;
+		this.ds_cat_atividade = ds_cat_atividade;
+	}
+	
 	public int getCd_cat_atividade() {
 		return cd_cat_atividade;
 	}

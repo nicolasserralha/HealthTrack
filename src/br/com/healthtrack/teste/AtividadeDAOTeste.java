@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import br.com.healthtrack.bean.AtividadeBean;
+import br.com.healthtrack.bean.CategoriaAtividadeBean;
 import br.com.healthtrack.exception.DBException;
 import br.com.healthtrack.factory.DAOFactory;
 import br.com.healthtrack.impl.IAtividadeDAO;
@@ -14,11 +15,15 @@ public class AtividadeDAOTeste {
 		
 		IAtividadeDAO atividadeDao = DAOFactory.getAtividadeDAO();
 		AtividadeBean atividade = new AtividadeBean();
+		CategoriaAtividadeBean categoria = null;
 		List<AtividadeBean> lista = new ArrayList<AtividadeBean>();
 		
 		//Cadastrar nova atividade
-		try {
-			atividade.setCd_cat_atividade(1);
+/*		try {
+			categoria = new CategoriaAtividadeBean();
+			categoria.setCd_cat_atividade(1);
+			categoria.setDs_cat_atividade("caminhada");
+			atividade.setCategoria(categoria);
 			atividade.setCd_usuario(1);
 			atividade.setDs_atividade("corrida");
 			atividade.setDt_atividade(Calendar.getInstance());
@@ -27,12 +32,13 @@ public class AtividadeDAOTeste {
 			System.out.println("Atividade de código: " + atividade.getCd_atividade() + " cadastrado com sucesso");
 		} catch (DBException e) {
 			e.printStackTrace();
-		}
+		}*/
 		
 		//LISTAR
 		lista = atividadeDao.listar(1);
 		for (AtividadeBean item : lista) {
 			System.out.println("Calorias: " + item.getNr_caloria());
+			System.out.println("ds_categoria = " + item.getCategoria().getDs_cat_atividade());
 			System.out.println("");
 		}
 		
