@@ -110,6 +110,7 @@ public class AtividadeDAO implements IAtividadeDAO{
 				int cd_cat_atividade = rs.getInt("CD_CAT_ATIVIDADE");
 				double nr_caloria = rs.getDouble("NR_CALORIA");
 				String ds_atividade = rs.getString("DS_ATIVIDADE");
+				java.sql.Date data = rs.getDate("DT_ATIVIDADE");
 				Calendar dt_atividade = Calendar.getInstance();
 				dt_atividade.setTime(rs.getDate("DT_ATIVIDADE"));
 				atividade = new AtividadeBean(cd_atividade,cd_usuario,cd_cat_atividade,nr_caloria,ds_atividade,dt_atividade);

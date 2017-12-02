@@ -41,8 +41,8 @@
 				  			<!--inicio do registro -->
 				  			<c:forEach items="${lista}" var="obj">
 						  		<tr>
-								    <td><c:out value="${obj.dt_atividade}"></c:out></td>
-								    <td><c:out value="${obj.dt_atividade}"></c:out></td> 
+								    <td><c:out value="${obj.dt_atividade.getTime()}"></c:out></td>
+								    <td><c:out value="${obj.dt_atividade.getTime()}"></c:out></td> 
 								    <td>
 								    	<select>
 										    <option value="cafe">Caminhada</option>
