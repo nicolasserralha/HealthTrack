@@ -53,7 +53,7 @@
 							    <td>Descrição da atividade</td>
 							    <td>450</td>
 							    <td>
-							    	<button type="button" class="btn btn-default btn-sm btn-warning" name="adicionar">
+							    	<button type="button" class="btn btn-default btn-sm btn-warning" name="alterar">
 							    		<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
 							    	</button>
 							    </td>
@@ -70,8 +70,7 @@
 				    	</tbody>
 			  		</table>
 			    	<div class="container-fluid" id="submit-tabela">
-			  			<button type="button" class="btn btn-success btn-xs">Add <span class="glyphicon glyphicon-plus"></span>
-			  			</button>
+			  			<button type="button" class="btn btn-success btn-xs" name="adicionar">Add <span class="glyphicon glyphicon-plus"></span></button>
 			  		</div>
 		  		</div>
 			</div>
