@@ -1,6 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="atividade" tagdir="/WEB-INF/tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <atividade:template title="Atividade Física">
 	<jsp:attribute name="content">
 		
@@ -37,33 +37,6 @@
 					  		</tr>
 				  		</thead>
 				  		<tbody>
-				  			<!--inicio do registro -->
-					  		<tr>
-							    <td>21/03/2017</td>
-							    <td>08:30</td> 
-							    <td>
-							    	<select>
-									    <option value="cafe">Caminhada</option>
-									    <option value="almoço">Corrida</option>
-									    <option value="jantar">Pedalada</option>
-									    <option value="lanche">Musculação</option>
-							    	</select>
-							    </td>
-							    <td>Descrição da atividade</td>
-							    <td>450</td>
-							    <td>
-							    	<button type="button" class="btn btn-default btn-sm btn-warning">
-							    		<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-							    	</button>
-							    </td>
-	
-							    <td>
-							    	<button type="button" class="btn btn-default btn-sm btn-danger">
-							    		<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-							    	</button>
-							    </td>
-						  	</tr>
-						  	<!--fim do registro -->
 	
 				  			<!--inicio do registro -->
 					  		<tr>
@@ -80,73 +53,20 @@
 							    <td>Descrição da atividade</td>
 							    <td>450</td>
 							    <td>
-							    	<button type="button" class="btn btn-default btn-sm btn-warning">
+							    	<button type="button" class="btn btn-default btn-sm btn-warning" name="adicionar">
 							    		<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
 							    	</button>
 							    </td>
 	
 							    <td>
-							    	<button type="button" class="btn btn-default btn-sm btn-danger">
+							    	<button type="button" class="btn btn-default btn-sm btn-danger" name="remover">
 							    		<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
 							    	</button>
 							    </td>
 						  	</tr>
 						  	<!--fim do registro -->
 	
-				  			<!--inicio do registro -->
-					  		<tr>
-							    <td>19/03/2017</td>
-							    <td>08:30</td> 
-							    <td>
-							    	<select>
-									    <option value="cafe">Caminhada</option>
-									    <option value="almoço">Corrida</option>
-									    <option value="jantar">Pedalada</option>
-									    <option value="lanche">Musculação</option>
-							    	</select>
-							    </td>
-							    <td>Descrição da atividade</td>
-							    <td>450</td>
-							    <td>
-							    	<button type="button" class="btn btn-default btn-sm btn-warning">
-							    		<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-							    	</button>
-							    </td>
-	
-							    <td>
-							    	<button type="button" class="btn btn-default btn-sm btn-danger">
-							    		<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-							    	</button>
-							    </td>
-						  	</tr>
-						  	<!--fim do registro -->					  						  	
-	
-						  	<tr>
-							    <td>18/03/2017</td>
-							    <td>08:30</td> 
-							    <td>
-							    	<select>
-									    <option value="cafe">Caminhada</option>
-									    <option value="almoço">Corrida</option>
-									    <option value="jantar">Pedalada</option>
-									    <option value="lanche">Musculação</option>
-							    	</select>
-							    </td>
-							    <td>Descrição da atividade</td>
-							    <td>450</td>
-							    
-							    <td>
-							    	<button type="button" class="btn btn-default btn-sm btn-warning">
-							    		<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-							    	</button>
-							    </td>
-	
-							    <td>
-							    	<button type="button" class="btn btn-default btn-sm btn-danger">
-							    		<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-							    	</button>
-							    </td>
-						  	</tr>
+			
 				    	</tbody>
 			  		</table>
 			    	<div class="container-fluid" id="submit-tabela">
