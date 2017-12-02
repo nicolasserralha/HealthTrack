@@ -7,7 +7,7 @@
 	<div class="container" id="errorpage">
 		<div class="alert alert-danger">
 <!-- 		  	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button> -->
-		  	<strong>Erro!</strong> Não encontramos página que você tentou acessar :/
+		  	<strong>Erro!</strong> NullPointerException
 		</div>
 	</div>
 	

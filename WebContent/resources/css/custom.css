@@ -3,6 +3,11 @@
 */
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 
+#errorpage{
+	margin-top: 100px;
+	
+}
+
 #form {
   border-style: solid;
   border-width: 1px;
