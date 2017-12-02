@@ -27,7 +27,7 @@ public class AtividadeServlet extends HttpServlet {
     }
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String acao = request.getParameter("action");
+		String acao = request.getAttribute("action").toString();
 		AtividadeBo atividade = new AtividadeBo();
 		List<AtividadeBean> lista;
 		HttpSession sessao = request.getSession();

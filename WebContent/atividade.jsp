@@ -39,34 +39,34 @@
 				  		<tbody>
 	
 				  			<!--inicio do registro -->
-					  		<tr>
-							    <td>20/03/2017</td>
-							    <td>08:30</td> 
-							    <td>
-							    	<select>
-									    <option value="cafe">Caminhada</option>
-									    <option value="almoço">Corrida</option>
-									    <option value="jantar">Pedalada</option>
-									    <option value="lanche">Musculação</option>
-							    	</select>
-							    </td>
-							    <td>Descrição da atividade</td>
-							    <td>450</td>
-							    <td>
-							    	<button type="button" class="btn btn-default btn-sm btn-warning" name="alterar">
-							    		<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-							    	</button>
-							    </td>
-	
-							    <td>
-							    	<button type="button" class="btn btn-default btn-sm btn-danger" name="remover">
-							    		<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-							    	</button>
-							    </td>
-						  	</tr>
-						  	<!--fim do registro -->
-	
-			
+				  			<c:forEach items="${lista}" var="obj">
+						  		<tr>
+								    <td><c:out value="${obj.dt_atividade}"></c:out></td>
+								    <td><c:out value="${obj.dt_atividade}"></c:out></td> 
+								    <td>
+								    	<select>
+										    <option value="cafe">Caminhada</option>
+										    <option value="almoço">Corrida</option>
+										    <option value="jantar">Pedalada</option>
+										    <option value="lanche">Musculação</option>
+								    	</select>
+								    </td>
+								    <td><c:out value="${obj.ds_atividade}"></c:out></td>
+								    <td><c:out value="${obj.nr_caloria}"></c:out></td>
+								    <td>
+								    	<button type="button" class="btn btn-default btn-sm btn-warning" name="alterar">
+								    		<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+								    	</button>
+								    </td>
+		
+								    <td>
+								    	<button type="button" class="btn btn-default btn-sm btn-danger" name="remover">
+								    		<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+								    	</button>
+								    </td>
+							  	</tr>
+							  	<!--fim do registro -->
+							</c:forEach>	
 				    	</tbody>
 			  		</table>
 			    	<div class="container-fluid" id="submit-tabela">
