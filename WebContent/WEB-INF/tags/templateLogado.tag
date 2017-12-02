@@ -46,7 +46,7 @@
 			      		<li><a href="atividade.jsp" class="page-scroll blue">Atividade</a></li>
 			      		<li><a href="alimentacao.jsp" class="page-scroll blue">Alimentação</a></li>
 			      		<li><a href="peso.jsp" class="page-scroll blue">Peso</a></li>
-			      		<li><a href="pressao.jsp" class="page-scroll blue">Presão</a></li>
+			      		<li><a href="pressao.jsp" class="page-scroll blue">Pressão</a></li>
 		      		</ul>
 		      	</c:if>
 		      	
