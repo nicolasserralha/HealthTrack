@@ -51,7 +51,7 @@
 			    <c:if test="${not empty user }">
 					<span class="navbar-text navbar-right">
 			    		${user }
-			        	<a href="login" class="btn btn-outline-primary my-2 my-sm-0">Sair</a>
+			        	<a href="logar" class="btn btn-outline-primary my-2 my-sm-0">Sair</a>
 			      	</span> 
 			    </c:if>	
 		      		

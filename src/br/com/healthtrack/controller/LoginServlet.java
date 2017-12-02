@@ -23,11 +23,12 @@ public class LoginServlet extends HttpServlet {
     	bo = new EmailBo();
 	    usuarioBo = new UsuarioBo();
     }
-    
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
+		  HttpSession session = request.getSession();
+		  session.invalidate();
+		  request.getRequestDispatcher("index.jsp").forward(request, response);
+		}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	    String email = request.getParameter("email");
