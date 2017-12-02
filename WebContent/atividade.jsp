@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
-<atividade:template title="Atividade Física">
+<atividade:templateLogado title="Atividade Física">
 	<jsp:attribute name="content">
 		
 		<ol class="breadcrumb">
@@ -47,7 +47,7 @@
 						  		<tr>
 								    <td><fmt:formatDate pattern="dd/MM/yyyy" value="${obj.dt_atividade.getTime()}" /></td>
 								    <td><fmt:formatDate pattern="HH:mm:ss" value="${obj.dt_atividade.getTime()}" /></td>
-									<td><c:out value="${obj.cd_cat_atividade}"></c:out></td>
+									<td><c:out value="${obj.categoria.getDs_cat_atividade()}"></c:out></td>
 								    <td><c:out value="${obj.ds_atividade}"></c:out></td>
 								    <td><c:out value="${obj.nr_caloria}"></c:out></td>
 								    
@@ -116,4 +116,4 @@
 	</section>
 
 	</jsp:attribute>
-</atividade:template>
+</atividade:templateLogado>

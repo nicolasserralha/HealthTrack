@@ -19,7 +19,7 @@ public class AtividadeDAOTeste {
 		List<AtividadeBean> lista = new ArrayList<AtividadeBean>();
 		
 		//Cadastrar nova atividade
-/*		try {
+		try {
 			categoria = new CategoriaAtividadeBean();
 			categoria.setCd_cat_atividade(1);
 			categoria.setDs_cat_atividade("caminhada");
@@ -32,7 +32,7 @@ public class AtividadeDAOTeste {
 			System.out.println("Atividade de código: " + atividade.getCd_atividade() + " cadastrado com sucesso");
 		} catch (DBException e) {
 			e.printStackTrace();
-		}*/
+		}
 		
 		//LISTAR
 		lista = atividadeDao.listar(1);

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="peso" tagdir="/WEB-INF/tags"%>
-<peso:template title="Peso">
+<peso:templateLogado title="Peso">
 	<jsp:attribute name="content">
 	
 		<ol class="breadcrumb">
@@ -160,4 +160,4 @@
 		</section>
 
 		</jsp:attribute>
-</peso:template>
+</peso:templateLogado>

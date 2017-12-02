@@ -27,15 +27,29 @@
 			      	</button>
 			      	<a class="navbar-brand page-scroll blue" href="#header">HealthTrack</a>
 		    	</div>
-
-
-		    	<div class="collapse navbar-collapse blue" id="navbar-collapse-1">
-			      	<ul class="nav navbar-nav blue">
+				
+				<div class="collapse navbar-collapse blue" id="navbar-collapse-1">
+				
+				<!-- Parte da Esquerda -->	
+				<c:if test="${empty user }">
+		    		<ul class="nav navbar-nav blue">
 			      		<li><a href="index.jsp" class="page-scroll blue">Home</a></li>
 			      		<li><a href="#footer" class="page-scroll blue">Contato</a></li>
 			      		<li><a class="page-scroll blue" href="cadastro.jsp">Cadastrar</a></li>
 		      		</ul>
-		      		
+		      	</c:if>	
+		      	
+		      	<c:if test="${not empty user }">
+		      		<ul class="nav navbar-nav blue">
+			      		<li><a href="index.jsp" class="page-scroll blue">Home</a></li>
+			      		<li><a href="dashboard.jsp" class="page-scroll blue">Dashboard</a></li>
+			      		<li><a href="atividade.jsp" class="page-scroll blue">Atividade</a></li>
+			      		<li><a href="alimentacao.jsp" class="page-scroll blue">Alimentação</a></li>
+			      		<li><a href="peso.jsp" class="page-scroll blue">Peso</a></li>
+			      		<li><a href="pressao.jsp" class="page-scroll blue">Presão</a></li>
+		      		</ul>
+		      	</c:if>
+		      	
 		      	<!-- Parte da Direita -->	
 		      	<c:if test="${empty user }">
 			    	<span class="navbar-text text-danger" style="margin-right:10px" >
@@ -48,6 +62,7 @@
 		        	<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Entrar</button>
 		      	</form>
 				</c:if>
+				
 			    <c:if test="${not empty user }">
 					<span class="navbar-text navbar-right">
 			    		${user }

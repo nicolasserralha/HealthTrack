@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="alimentacao" tagdir="/WEB-INF/tags"%>
-<alimentacao:template title="Alimentação">
+<alimentacao:templateLogado title="Alimentação">
 	<jsp:attribute name="content">
 	
 		<ol class="breadcrumb">
@@ -203,4 +203,4 @@
 		</section>		
 	
 		</jsp:attribute>
-</alimentacao:template>
+</alimentacao:templateLogado>
