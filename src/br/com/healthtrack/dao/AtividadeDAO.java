@@ -139,7 +139,7 @@ public class AtividadeDAO implements IAtividadeDAO{
 		
 		try {
 			conexao = HealthTrackDBManager.getInstance().getConnection();
-			String sql = "SELECT * FROM T_REL_ATIVIDADE WHERE CD_USUARIO = ?";
+			String sql = "SELECT * FROM T_REL_ATIVIDADE WHERE CD_USUARIO = ? order by DT_ATIVIDADE DESC";
 			stmt = conexao.prepareStatement(sql, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
 			stmt.setInt(1, codigoUsuario);
 			ResultSet rs = stmt.executeQuery();

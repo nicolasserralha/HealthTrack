@@ -56,7 +56,7 @@
 						  		<tr>
 						  			<td style="display:none"><c:out value="${obj.cd_atividade}"></c:out></td>
 								    <td><fmt:formatDate pattern="dd/MM/yyyy" value="${obj.dt_atividade.getTime()}" /></td>
-								    <td><fmt:formatDate pattern="HH:mm" value="${obj.dt_atividade.getTime()}" /></td>
+								    <td><fmt:formatDate pattern="HH:mm:ss" value="${obj.dt_atividade.getTime()}" /></td>
 									<td><c:out value="${obj.categoria.getDs_cat_atividade()}"></c:out></td>
 								    <td><c:out value="${obj.ds_atividade}"></c:out></td>
 								    <td><c:out value="${obj.nr_caloria}"></c:out></td>
