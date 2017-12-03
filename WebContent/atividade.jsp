@@ -29,6 +29,7 @@
 			  		<table class="table table-striped">
 			  			<thead>
 					    	<tr>
+					    		<th>Código</th>
 							    <th>Data</th>
 							    <th>Horário</th> 
 							    <th>Tipo</th>
@@ -40,11 +41,20 @@
 				  		</thead>
 				  		<tbody>
 	
+	
+	
+							<c:if test="${not empty mensagemRemover }">
+					    		<div class="alert alert-success">${mensagemRemover}</div>
+					  		</c:if>
+							<c:if test="${not empty erro }">
+					    		<div class="alert alert-danger">${erro}</div>
+					  		</c:if>
 				  			<!--inicio do registro -->
 				  			
 				  			<c:forEach items="${lista}" var="obj">
 			  						
 						  		<tr>
+						  			<td><c:out value="${obj.cd_atividade}"></c:out></td>
 								    <td><fmt:formatDate pattern="dd/MM/yyyy" value="${obj.dt_atividade.getTime()}" /></td>
 								    <td><fmt:formatDate pattern="HH:mm" value="${obj.dt_atividade.getTime()}" /></td>
 									<td><c:out value="${obj.categoria.getDs_cat_atividade()}"></c:out></td>
@@ -52,13 +62,13 @@
 								    <td><c:out value="${obj.nr_caloria}"></c:out></td>
 								    
 								    <td>
-								    	<button type="button" class="btn btn-default btn-sm btn-warning" name="alterar">
+								    	<button type="button" class="btn btn-default btn-sm btn-warning" name="alterar" onClick="redireciona('AtividadeServlet','action', 'alterar', '${obj.cd_atividade}' )">
 								    		<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
 								    	</button>
 								    </td>
 		
 								    <td>
-								    	<button type="button" class="btn btn-default btn-sm btn-danger" name="remover">
+								    	<button type="button" class="btn btn-default btn-sm btn-danger" name="remover" onClick="redireciona('AtividadeServlet','action', 'excluir', '${obj.cd_atividade}' )">
 								    		<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
 								    	</button>
 								    </td>
@@ -93,7 +103,7 @@
 			  		</table>
 			    	<div class="container-fluid" id="submit-tabela">
 			    		<form action="AtividadeServlet" method="get">
-			  				<button type="submit" name="AtividadeServlet" class="btn btn-success btn-xs" >Add <span class="glyphicon glyphicon-plus"></span></button>
+			  				<button type="submit" name="AtividadeServlet" class="btn btn-success btn-xs" onClick="adiciona('AtividadeServlet','action', 'adicionar')">Add <span class="glyphicon glyphicon-plus"></span></button>
 			  			</form>
 			  		</div>
 		  		</div>
@@ -142,6 +152,17 @@
 			</div>
 		</div>
 	</section>
+	
+	<script>
+		function redireciona(param, nomeDoCampo, valorASerPassado, codigo){
+			  location.href=param+"?"+nomeDoCampo+"="+valorASerPassado +"&"+"codigo"+"="+codigo;
+			}
+	</script>
+	<script>
+		function adiciona(param, nomeDoCampo, valorASerPassado){
+			  location.href=param+"?"+nomeDoCampo+"="+valorASerPassado;
+			}
+	</script>
 
 	</jsp:attribute>
 </atividade:templateLogado>

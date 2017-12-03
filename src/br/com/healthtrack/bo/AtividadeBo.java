@@ -18,12 +18,13 @@ public class AtividadeBo {
 	
 	IAtividadeDAO dao = DAOFactory.getAtividadeDAO();
 	
+	List<AtividadeBean> lista;
+	
+	
 	public List<AtividadeBean> listarAtividade(int codigoUsuario){
 		
-		List<AtividadeBean> lista = new ArrayList<AtividadeBean>();
-		
+		lista = new ArrayList<AtividadeBean>();
 		lista = dao.listar(codigoUsuario);
-		
 		return lista;
 		
 	}
@@ -53,6 +54,46 @@ public class AtividadeBo {
 				
 		return atividade;
 	}
+	
+	public AtividadeBean editarAtividade(int codigoUsuario, String datax, String hora, int categoriax, String ds_atividade, Double nr_caloria){
+		Date data;
+		SimpleDateFormat fmt = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");    
+		Calendar dt_atividade = Calendar.getInstance();
+		
+		try {
+			data = (Date) fmt.parse(datax + hora);
+			String str = fmt.format(data);   // isto faz com que mostre do jeito que você quer
+			dt_atividade.setTime(data);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		} 
+		
+		CategoriaAtividadeBean categoria = dao.buscarCategoria(categoriax);
+		AtividadeBean atividade = new AtividadeBean(codigoUsuario, categoria, nr_caloria, ds_atividade, dt_atividade);
+		
+		try {
+			dao.atualizar(atividade);
+		} catch (DBException e) {
+			e.printStackTrace();
+		}
+		
+		return atividade;
+	}
+	
+	public String excluirAtividade (int codigoAtividade){
+		
+		try {
+			dao.remover(codigoAtividade);
+			return "Removido com sucesso.";
+		} catch (DBException e) {
+			e.printStackTrace();
+			return "Problema ao remover registro.";
+		}
+		
+	}
+	
+	
+	
 	
 	
 	

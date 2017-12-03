@@ -30,8 +30,9 @@ public class AtividadeServlet extends HttpServlet {
 		List<AtividadeBean> lista;
 		HttpSession sessao = request.getSession();
 		int id = Integer.parseInt(sessao.getAttribute("id").toString());
-
+		
 		switch(acao) {
+		
 		case "listar": 
 			lista = atividade.listarAtividade(id);
 			request.setAttribute("lista", lista);
@@ -42,6 +43,22 @@ public class AtividadeServlet extends HttpServlet {
 			lista = atividade.listarAtividade(id);
 			request.setAttribute("lista", lista);
 			request.setAttribute("novoRegistro", "sim");
+			request.getRequestDispatcher("atividade.jsp").forward(request, response);
+			break;
+			
+		case "alterar":
+			lista = atividade.listarAtividade(id);
+			request.setAttribute("lista", lista);
+			request.setAttribute("novoRegistro", "sim");
+			request.getRequestDispatcher("atividade.jsp").forward(request, response);
+			break;
+			
+		case "excluir":
+			int codigo = Integer.parseInt(request.getAttribute("codigo").toString());
+			String mensagem = atividade.excluirAtividade(codigo);
+			request.setAttribute("mensagemRemover", mensagem);
+			lista = atividade.listarAtividade(id);
+			request.setAttribute("lista", lista);
 			request.getRequestDispatcher("atividade.jsp").forward(request, response);
 			break;
 		}

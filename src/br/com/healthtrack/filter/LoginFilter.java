@@ -24,6 +24,11 @@ public class LoginFilter implements Filter{
     HttpServletRequest req = (HttpServletRequest) request;
     HttpSession session = req.getSession();
     String url = req.getRequestURI();
+    String parametro = req.getParameter("action");
+    String codigo = req.getParameter("codigo");
+    if(parametro != null){
+    	url = url + "/" + parametro;
+  	}
     
     if (session.getAttribute("user") == null && !url.endsWith("logar") && !url.contains("resources") && !url.contains("index")) {
     	req.setAttribute("erroLogin", "Entre com o usuário e senha!");
@@ -34,15 +39,25 @@ public class LoginFilter implements Filter{
     		req.getRequestDispatcher("AtividadeServlet").forward(req, response);
     		return;
     	}
-    	else if(url.endsWith("AtividadeServlet")){
+    	else if(url.endsWith("adicionar")){
     		req.setAttribute("action", "adicionar");
+    		req.getRequestDispatcher("AtividadeServlet").forward(req, response);
+    		return;
+    	}
+    	else if(url.contains("alterar")){
+    		req.setAttribute("action", "alterar");
+    		req.getRequestDispatcher("AtividadeServlet").forward(req, response);
+    		return;
+    	}
+    	else if(url.contains("excluir")){
+    		req.setAttribute("action", "excluir");
+    		req.setAttribute("codigo", codigo );
     		req.getRequestDispatcher("AtividadeServlet").forward(req, response);
     		return;
     	}
     	
       chain.doFilter(req, response);
     }
-    
   }
 
 }
