@@ -46,7 +46,7 @@
 			  						
 						  		<tr>
 								    <td><fmt:formatDate pattern="dd/MM/yyyy" value="${obj.dt_atividade.getTime()}" /></td>
-								    <td><fmt:formatDate pattern="HH:mm:ss" value="${obj.dt_atividade.getTime()}" /></td>
+								    <td><fmt:formatDate pattern="HH:mm" value="${obj.dt_atividade.getTime()}" /></td>
 									<td><c:out value="${obj.categoria.getDs_cat_atividade()}"></c:out></td>
 								    <td><c:out value="${obj.ds_atividade}"></c:out></td>
 								    <td><c:out value="${obj.nr_caloria}"></c:out></td>
@@ -65,11 +65,36 @@
 							  	</tr>
 							  	<!--fim do registro -->
 							</c:forEach>	
+			      	
+							<c:if test="${not empty novoRegistro }">
+							
+								<tr>
+									<td> <input type="date" name="data" class="form-control" id="data" placeholder="data"> </td>
+									<td> <input type="time" name="hora" class="form-control" id="hora" placeholder="horário"> </td>
+			     			    	<td>
+								   		<select name="categoria">
+										    <option value="1">Caminhada</option>
+										    <option value="2">Corrida</option>
+										    <option value="3">Pedalada</option>
+										    <option value="4">Musculação</option>
+							    		</select>
+								    </td>
+									<td> <input type="text" name="descricao" class="form-control" id="descricao" placeholder="descrição"> </td>
+									<td> <input type="number" name="calorias" class="form-control" id="calorias" placeholder="calorias"> </td>
+									<td>
+										<button type="button" class="btn btn-default btn-sm btn-warning" name="alterar">
+								    		<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+								    	</button>
+								    </td>
+								</tr>
+							</c:if>
 							
 				    	</tbody>
 			  		</table>
 			    	<div class="container-fluid" id="submit-tabela">
-			  			<button type="button" class="btn btn-success btn-xs" name="adicionar">Add <span class="glyphicon glyphicon-plus"></span></button>
+			    		<form action="AtividadeServlet" method="get">
+			  				<button type="submit" name="AtividadeServlet" class="btn btn-success btn-xs" >Add <span class="glyphicon glyphicon-plus"></span></button>
+			  			</form>
 			  		</div>
 		  		</div>
 			</div>
@@ -85,7 +110,8 @@
 			<div class="row">
 			    <div class="col-sm-6 col-md-4">
 			  	  	<figure class="thumbnail">
-			    		<img src="resources\img\atividades\treino_1920.jpg" alt="Salada">
+			    		<!-- <img src="resources\img\atividades\treino_1920.jpg" alt="Treino"> -->
+			    		<img src="resources/img/alimentacao/folhas_1920.jpg" alt="Salada">
 				      	<figcaption class="caption">
 					       	<h3>Fracione o treino</h3>
 					       	<p>Alguns estudos recentes vêm demonstrando que sessões de exercícios curtas e cumulativas durante o dia são tão benéficas quanto períodos longos e isolados de treino. O mais recente deles, realizado Centro de Pesquisas de Estilo de Vida Saudável da Universidade do Estado do Arizona (EUA), mostrou que o treino dividido em três sessões curtas por dia foi significativamente mais eficiente que uma sessão única de meia hora para controlar a pressão arterial.</p>
@@ -94,7 +120,8 @@
 				</div>
 				<div class="col-sm-6 col-md-4">
 			  	  	<figure class="thumbnail">
-			    		<img src="resources\img\atividades\alongamento_1920.jpg" alt="Frutas">
+			    		<!-- <img src="resources/img/atividades/alongamento_1920.jpg" alt="Alongamento"> -->
+			    		<img src="resources/img/alimentacao/folhas_1920.jpg" alt="Salada">
 				      	<figcaption class="caption">
 				        	<h3>Alongar antes e depois</h3>
 				        	<p>Antes do exercício físico, o alongamento serve, principalmente, como um fator de prevenção contra lesões musculares durante a atividade. 
@@ -104,7 +131,8 @@
 				</div>
 			    <div class="col-sm-6 col-md-4">
 			  	  	<figure class="thumbnail">
-			    		<img src="resources\img\atividades\agua_1920.jpg" alt="Legumes">
+			    		<!-- <img src="resources/img/atividades/agua_1920.jpg" alt="Agua"> -->
+						<img src="resources/img/alimentacao/folhas_1920.jpg" alt="Salada">
 				      	<figcaption class="caption">
 					        <h3>Água</h3>
 					        <p> Mantenha uma boa hidratação: a ingestão de líquidos deve acontecer antes, durante e após os exercícios. A perda excessiva de líquidos e a desidratação constituem a principal causa de mal-estar durante o exercício.</p>

@@ -26,14 +26,21 @@ public class LoginFilter implements Filter{
     String url = req.getRequestURI();
     
     if (session.getAttribute("user") == null && !url.endsWith("logar") && !url.contains("resources") && !url.contains("index")) {
-    	request.setAttribute("erroLogin", "Entre com o usuário e senha!");
-    	request.getRequestDispatcher("index.jsp").forward(request, response);
+    	req.setAttribute("erroLogin", "Entre com o usuário e senha!");
+    	req.getRequestDispatcher("index.jsp").forward(request, response);
     }else {
     	if(url.contains("atividade")){
     		req.setAttribute("action", "listar");
     		req.getRequestDispatcher("AtividadeServlet").forward(req, response);
+    		return;
     	}
-      chain.doFilter(request, response);
+    	else if(url.endsWith("AtividadeServlet")){
+    		req.setAttribute("action", "adicionar");
+    		req.getRequestDispatcher("AtividadeServlet").forward(req, response);
+    		return;
+    	}
+    	
+      chain.doFilter(req, response);
     }
     
   }

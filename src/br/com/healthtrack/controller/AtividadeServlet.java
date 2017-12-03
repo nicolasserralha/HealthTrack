@@ -29,7 +29,7 @@ public class AtividadeServlet extends HttpServlet {
 		AtividadeBo atividade = new AtividadeBo();
 		List<AtividadeBean> lista;
 		HttpSession sessao = request.getSession();
-		int id = Integer.parseInt(sessao.getAttribute("id").toString()); 
+		int id = Integer.parseInt(sessao.getAttribute("id").toString());
 
 		switch(acao) {
 		case "listar": 
@@ -37,12 +37,34 @@ public class AtividadeServlet extends HttpServlet {
 			request.setAttribute("lista", lista);
 			request.getRequestDispatcher("atividade.jsp").forward(request, response);
 			break;
+			
+		case "adicionar":
+			lista = atividade.listarAtividade(id);
+			request.setAttribute("lista", lista);
+			request.setAttribute("novoRegistro", "sim");
+			request.getRequestDispatcher("atividade.jsp").forward(request, response);
+			break;
 		}
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		AtividadeBo bo = new AtividadeBo();
+		HttpSession sessao = request.getSession();
+		
+		int codigoUsuario = Integer.parseInt(sessao.getAttribute("id").toString());
+		String data = request.getParameter("data");
+		String hora = request.getParameter("hora");
+		int categoria = Integer.parseInt(request.getAttribute("categoria").toString());
+		String ds_atividade = request.getParameter("descricao");
+		double nr_caloria = Double.parseDouble(request.getParameter("calorias"));
+		
+		if(bo.inserirAtividade(codigoUsuario, data, hora, categoria, ds_atividade, nr_caloria ) != null){
+			request.getRequestDispatcher("atividade.jsp").forward(request, response);
+		}
+		else{
+			request.setAttribute("erroAtividade", "Erro ao cadastrar atividade");
+			request.getRequestDispatcher("atividade.jsp").forward(request, response);
+		}
 	}
 	
 }
