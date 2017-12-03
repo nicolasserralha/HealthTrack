@@ -1,6 +1,6 @@
 package br.com.healthtrack.bo;
 
-import java.sql.Date;
+import java.util.Date;
 import java.sql.Time;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -20,6 +20,12 @@ public class AtividadeBo {
 	
 	List<AtividadeBean> lista;
 	
+	public AtividadeBean buscarAtividade (int codigoAtividade){
+		
+		AtividadeBean atividade = dao.buscar(codigoAtividade);
+		
+		return atividade;
+	}
 	
 	public List<AtividadeBean> listarAtividade(int codigoUsuario){
 		
@@ -30,13 +36,25 @@ public class AtividadeBo {
 	}
 	
 	public AtividadeBean inserirAtividade(int codigoUsuario, String datax, String hora, int categoriax, String ds_atividade, Double nr_caloria) {
+		
+		String dataFormatada = "";
+		
+		try {
+			SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
+			Date dataf = (Date) formato.parse(datax);
+			formato.applyPattern("dd/MM/yyyy");
+			dataFormatada = formato.format(dataf);
+		} catch (ParseException e1) {
+			e1.printStackTrace();
+		}
+		
 		Date data;
 		SimpleDateFormat fmt = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");    
 		Calendar dt_atividade = Calendar.getInstance();
+		String dataCompleta = dataFormatada + " " + hora + ":00";
 		
 		try {
-			data = (Date) fmt.parse(datax + hora);
-			String str = fmt.format(data);   // isto faz com que mostre do jeito que você quer
+			data = (Date) fmt.parse(dataCompleta);
 			dt_atividade.setTime(data);
 		} catch (ParseException e) {
 			e.printStackTrace();
@@ -56,14 +74,27 @@ public class AtividadeBo {
 	}
 	
 	public AtividadeBean editarAtividade(int codigoUsuario, String datax, String hora, int categoriax, String ds_atividade, Double nr_caloria){
+		
+		String dataFormatada = "";
+		
+		try {
+			SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
+			Date dataf = (Date) formato.parse(datax);
+			formato.applyPattern("dd/MM/yyyy");
+			dataFormatada = formato.format(dataf);
+		} catch (ParseException e1) {
+			e1.printStackTrace();
+		}
+		
 		Date data;
 		SimpleDateFormat fmt = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");    
 		Calendar dt_atividade = Calendar.getInstance();
+		String dataCompleta = dataFormatada + " " + hora + ":00";
 		
 		try {
-			data = (Date) fmt.parse(datax + hora);
-			String str = fmt.format(data);   // isto faz com que mostre do jeito que você quer
-			dt_atividade.setTime(data);
+			data = (Date) fmt.parse(dataCompleta);
+			/*String str = fmt.format(data);   // isto faz com que mostre do jeito que você quer
+*/			dt_atividade.setTime(data);
 		} catch (ParseException e) {
 			e.printStackTrace();
 		} 
@@ -75,8 +106,9 @@ public class AtividadeBo {
 			dao.atualizar(atividade);
 		} catch (DBException e) {
 			e.printStackTrace();
+			return null;
 		}
-		
+				
 		return atividade;
 	}
 	
@@ -91,10 +123,5 @@ public class AtividadeBo {
 		}
 		
 	}
-	
-	
-	
-	
-	
 	
 }

@@ -29,7 +29,7 @@
 			  		<table class="table table-striped">
 			  			<thead>
 					    	<tr>
-					    		<th>Código</th>
+					    		<th style="display:none">Código</th>
 							    <th>Data</th>
 							    <th>Horário</th> 
 							    <th>Tipo</th>
@@ -54,7 +54,7 @@
 				  			<c:forEach items="${lista}" var="obj">
 			  						
 						  		<tr>
-						  			<td><c:out value="${obj.cd_atividade}"></c:out></td>
+						  			<td style="display:none"><c:out value="${obj.cd_atividade}"></c:out></td>
 								    <td><fmt:formatDate pattern="dd/MM/yyyy" value="${obj.dt_atividade.getTime()}" /></td>
 								    <td><fmt:formatDate pattern="HH:mm" value="${obj.dt_atividade.getTime()}" /></td>
 									<td><c:out value="${obj.categoria.getDs_cat_atividade()}"></c:out></td>
@@ -75,15 +75,38 @@
 							  	</tr>
 							  	<!--fim do registro -->
 							</c:forEach>	
-			      	
-							<c:if test="${not empty novoRegistro }">
+												
+			      			<c:if test="${not empty alterar }">
+								<tr>
+			     			    	<td><input type="date" name="data" class="form-control" id="data" value="${dataObjeto}"></td>
+			     			    	<td> <input type="time" name="hora" class="form-control" id="hora" placeholder="horário" value="${horaObjeto}"> </td>
+			     			    	<td>
+								   		<select name="categoria" onchange="test(this)" id="categoria">
+										    <option value="1" selected>Caminhada</option>
+										    <option value="2">Corrida</option>
+										    <option value="3">Pedalada</option>
+										    <option value="4">Musculação</option>
+							    		</select>
+								    </td>
+									<td><input type="text" name="descricao" class="form-control" id="descricao" value="${requestScope.objeto.ds_atividade}"></td>
+									<td><input type="number" name="calorias" class="form-control" id="calorias" value="${requestScope.objeto.nr_caloria}"></td>
+									<td>
+									<!-- <form action="AtividadeServlet" method="GET"> -->
+										<button type="button" class="btn btn-success btn-sm" name="adicionarAtividade" onClick="adicionarAtividade('AtividadeServlet','action', 'atualizarRegistro', 'data' , 'hora', 'categoria', 'descricao', 'calorias' )">
+								    		<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+								    	</button>
+							    	<!-- </form> -->
+								    </td>
+								</tr>
+							</c:if>
 							
+							<c:if test="${not empty novoRegistro }">
 								<tr>
 									<td> <input type="date" name="data" class="form-control" id="data" placeholder="data"> </td>
 									<td> <input type="time" name="hora" class="form-control" id="hora" placeholder="horário"> </td>
 			     			    	<td>
-								   		<select name="categoria">
-										    <option value="1">Caminhada</option>
+								   		<select name="categoria" onchange="test(this)" id="categoria">
+										    <option value="1" selected>Caminhada</option>
 										    <option value="2">Corrida</option>
 										    <option value="3">Pedalada</option>
 										    <option value="4">Musculação</option>
@@ -92,20 +115,22 @@
 									<td> <input type="text" name="descricao" class="form-control" id="descricao" placeholder="descrição"> </td>
 									<td> <input type="number" name="calorias" class="form-control" id="calorias" placeholder="calorias"> </td>
 									<td>
-										<button type="button" class="btn btn-default btn-sm btn-warning" name="alterar">
-								    		<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+									<!-- <form action="AtividadeServlet" method="GET"> -->
+										<button type="button" class="btn btn-success btn-sm" name="adicionarAtividade" onClick="adicionarAtividade('AtividadeServlet','action', 'adicionarRegistro', 'data' , 'hora', 'categoria', 'descricao', 'calorias' )">
+								    		<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
 								    	</button>
+							    	<!-- </form> -->
 								    </td>
 								</tr>
 							</c:if>
 							
 				    	</tbody>
 			  		</table>
-			    	<div class="container-fluid" id="submit-tabela">
-			    		<form action="AtividadeServlet" method="get">
-			  				<button type="submit" name="AtividadeServlet" class="btn btn-success btn-xs" onClick="adiciona('AtividadeServlet','action', 'adicionar')">Add <span class="glyphicon glyphicon-plus"></span></button>
-			  			</form>
-			  		</div>
+			    	
+			    	<button type="button" class="btn btn-success btn-xs" name="adicionar" onClick="redireciona('AtividadeServlet','action', 'adicionar')">Add 
+		    			<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+			    	</button>
+			  		
 		  		</div>
 			</div>
 		</section>
@@ -152,17 +177,28 @@
 			</div>
 		</div>
 	</section>
-	
+	<script>
+		function adicionarAtividade(param, nomeDoCampo, valorASerPassado, data, hora, categoria, descricao, calorias){
+			
+			var valorData = $('#data').val();
+			var valorHora = $('#hora').val();
+			var valorCategoria = $('#categoria').val();
+			var valorDescricao = $('#descricao').val();
+			var valorCalorias = $('#calorias').val();
+		  	
+			location.href=param+"?"+nomeDoCampo+"="+valorASerPassado+"&"+"data"+"="+valorData+"&"+"hora"+"="+valorHora+"&"+"categoria"+"="+valorCategoria+"&"+"descricao"+"="+valorDescricao+"&"+"calorias"+"="+valorCalorias;
+		}
+	</script>
+	<script>
+		var categoria = '';
+		function test(el) {
+		  categoria = el.value;
+		}
+	</script>
 	<script>
 		function redireciona(param, nomeDoCampo, valorASerPassado, codigo){
 			  location.href=param+"?"+nomeDoCampo+"="+valorASerPassado +"&"+"codigo"+"="+codigo;
 			}
 	</script>
-	<script>
-		function adiciona(param, nomeDoCampo, valorASerPassado){
-			  location.href=param+"?"+nomeDoCampo+"="+valorASerPassado;
-			}
-	</script>
-
 	</jsp:attribute>
 </atividade:templateLogado>

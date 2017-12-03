@@ -1,6 +1,10 @@
 package br.com.healthtrack.controller;
 
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -46,16 +50,49 @@ public class AtividadeServlet extends HttpServlet {
 			request.getRequestDispatcher("atividade.jsp").forward(request, response);
 			break;
 			
+		case "adicionarRegistro":
+			String datax = request.getAttribute("data").toString();
+			String hora = request.getAttribute("hora").toString();
+			String categoriax = request.getAttribute("categoria").toString();
+			int categoria = Integer.parseInt(categoriax);
+			String ds_atividade = request.getAttribute("descricao").toString();
+			String calorias = request.getAttribute("calorias").toString();
+			Double nr_caloria = Double.parseDouble(calorias);
+			
+			atividade.inserirAtividade(id, datax, hora, categoria, ds_atividade, nr_caloria);
+			lista = atividade.listarAtividade(id);
+			request.setAttribute("lista", lista);
+			request.getRequestDispatcher("atividade.jsp").forward(request, response);
+			break;
+			
 		case "alterar":
 			lista = atividade.listarAtividade(id);
 			request.setAttribute("lista", lista);
-			request.setAttribute("novoRegistro", "sim");
+			int codigo = Integer.parseInt(request.getAttribute("codigo").toString());
+			AtividadeBean atividadeAlterar = atividade.buscarAtividade(codigo);
+			request.setAttribute("objeto", atividadeAlterar);
+			request.setAttribute("alterar", "sim");
+			request.getRequestDispatcher("atividade.jsp").forward(request, response);
+			break;
+			
+		case "alterarAtividade":
+			String dataxx = request.getAttribute("data").toString();
+			String horax = request.getAttribute("hora").toString();
+			String categoriaxx = request.getAttribute("categoria").toString();
+			int categoriaxz = Integer.parseInt(categoriaxx);
+			String ds_atividadex = request.getAttribute("descricao").toString();
+			String caloriasx = request.getAttribute("calorias").toString();
+			Double nr_caloriax = Double.parseDouble(caloriasx);
+			
+			atividade.editarAtividade(id, dataxx, horax, categoriaxz, ds_atividadex, nr_caloriax);
+			lista = atividade.listarAtividade(id);
+			request.setAttribute("lista", lista);
 			request.getRequestDispatcher("atividade.jsp").forward(request, response);
 			break;
 			
 		case "excluir":
-			int codigo = Integer.parseInt(request.getAttribute("codigo").toString());
-			String mensagem = atividade.excluirAtividade(codigo);
+			int codigox = Integer.parseInt(request.getAttribute("codigo").toString());
+			String mensagem = atividade.excluirAtividade(codigox);
 			request.setAttribute("mensagemRemover", mensagem);
 			lista = atividade.listarAtividade(id);
 			request.setAttribute("lista", lista);
