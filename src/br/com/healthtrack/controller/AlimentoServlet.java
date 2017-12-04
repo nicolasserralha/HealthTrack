@@ -44,7 +44,7 @@ public class AlimentoServlet extends HttpServlet {
 			lista = alimento.listarAlimento(id);
 			request.setAttribute("lista", lista);
 			request.setAttribute("novoRegistro", "sim");
-			request.getRequestDispatcher("alimento.jsp").forward(request, response);
+			request.getRequestDispatcher("alimentacao.jsp").forward(request, response);
 			break;
 			
 		case "adicionarRegistro":
@@ -61,7 +61,7 @@ public class AlimentoServlet extends HttpServlet {
 			
 			request.setAttribute("lista", lista);
 			request.setAttribute("mensagemSucesso", "Adicionado com Sucesso");
-			request.getRequestDispatcher("alimento.jsp").forward(request, response);
+			request.getRequestDispatcher("alimentacao.jsp").forward(request, response);
 			break;
 			
 		case "alterar":
@@ -71,7 +71,7 @@ public class AlimentoServlet extends HttpServlet {
 			AlimentoBean alimentoAlterar = alimento.buscarAlimento(codigo);
 			request.setAttribute("objeto", alimentoAlterar);
 			request.setAttribute("alterar", "sim");
-			request.getRequestDispatcher("alimento.jsp").forward(request, response);
+			request.getRequestDispatcher("alimentacao.jsp").forward(request, response);
 			break;
 			
 		case "alteraralimento":
@@ -86,7 +86,7 @@ public class AlimentoServlet extends HttpServlet {
 			alimento.editarAlimento(id, dataxx, horax, categoriaxz, ds_alimentox, nr_caloriax);
 			lista = alimento.listarAlimento(id);
 			request.setAttribute("lista", lista);
-			request.getRequestDispatcher("alimento.jsp").forward(request, response);
+			request.getRequestDispatcher("alimentacao.jsp").forward(request, response);
 			break;
 			
 		case "excluir":
@@ -95,7 +95,7 @@ public class AlimentoServlet extends HttpServlet {
 			request.setAttribute("mensagemRemover", mensagem);
 			lista = alimento.listarAlimento(id);
 			request.setAttribute("lista", lista);
-			request.getRequestDispatcher("alimento.jsp").forward(request, response);
+			request.getRequestDispatcher("alimentacao.jsp").forward(request, response);
 			break;
 		}
 	}
