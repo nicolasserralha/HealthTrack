@@ -2,6 +2,7 @@ package br.com.healthtrack.impl;
 
 import java.util.List;
 import br.com.healthtrack.bean.AlimentoBean;
+import br.com.healthtrack.bean.CategoriaAlimentoBean;
 import br.com.healthtrack.exception.DBException;
 
 public interface IAlimentoDAO {
@@ -11,5 +12,6 @@ public interface IAlimentoDAO {
 	  void remover(int codigo) throws DBException;
 	  AlimentoBean buscar(int id);
 	  List<AlimentoBean> listar(int codigoUsuario);
+	CategoriaAlimentoBean buscarCategoria(int categoriax);
 	
 }

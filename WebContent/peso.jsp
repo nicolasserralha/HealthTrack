@@ -9,20 +9,16 @@
 		  	<li class="active">Peso</li>
 		</ol>
 		
-		<div class="line"></div>
+		<div id="page-wrapper">
 		
-		<div class="jumbotron">
-			<div class="container-fluid">
-		  		<h1>Gerencie seu Peso</h1>
-		  		<p>Adicione, altere ou remova informações</p>
-	  		</div>
-		</div>
+			<div class="jumbotron">
+				<div class="container-fluid">
+			  		<h1>Gerencie seu Peso</h1>
+			  		<p>Adicione, altere ou remova informações</p>
+		  		</div>
+			</div>
 		
-		<div class="line"></div>
-	
-		<section class="container-fluid" id="section-alimentos">
-			<div class="panel panel-default">
-			  	<div class="panel-heading panel-gray"><h3>Lista de Atividades</h3></div>
+			<section>
 		  		<div class="table-responsive">	
 			  		<table class="table table-striped">
 			  			<thead>
@@ -111,21 +107,15 @@
 						  	</tr>
 				    	</tbody>
 			  		</table>
-			    	<div class="container-fluid" id="submit-tabela">
-			  			<button type="button" class="btn btn-success btn-xs">Add <span class="glyphicon glyphicon-plus"></span>
-			  			</button>
-			  		</div>
+				<button type="button" class="btn btn-primary btn-md" id="btn-todo" name="adicionar" onClick="redireciona('PesoServlet','action', 'adicionar')">Add </button>
 		  		</div>
-			</div>
 		</section>
 	
-		<div class="line"></div>
-	
 		<section id="section-dicas">
-			<div class="container-fluid" id="container-dicas">
+			<div id="container-dicas">
 				<h2>Dicas de Exercícios Físicos</h2>
 			</div>
-			<div class="container-fluid">
+			<div>
 				<div class="row">
 				    <div class="col-sm-6 col-md-4">
 				  	  	<figure class="thumbnail">
@@ -158,6 +148,7 @@
 				</div>
 			</div>
 		</section>
+		</div>
 
 		</jsp:attribute>
 </peso:templateLogado>

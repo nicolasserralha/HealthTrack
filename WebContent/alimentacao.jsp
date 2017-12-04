@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="alimentacao" tagdir="/WEB-INF/tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+
 <alimentacao:templateLogado title="Alimentação">
 	<jsp:attribute name="content">
 	
@@ -9,165 +12,77 @@
 		  	<li class="active">Alimentação</li>
 		</ol>
 		
-		<div class="line"></div>
+		<div id="page-wrapper">
 		
-		<div class="jumbotron">
-			<div class="container-fluid">
-		  		<h1>Gerencie sua Alimentação</h1>
-		  		<p>Adicione, altere ou remova informações</p>
-	  		</div>
-		</div>
-		
-		<div class="line"></div>
-		
-		<section class="container-fluid" id="section-alimentos">
-		<div class="panel panel-default">
-		  	<div class="panel-heading panel-gray"><h3>Lista de Alimentos Consumidos</h3></div>
-	  		<div class="table-responsive">	
-		  		<table class="table table-striped">
-		  			<thead>
-				    	<tr>
-						    <th>Data</th>
-						    <th>Horário</th> 
-						    <th>Tipo</th>
-						    <th>Descrição</th>
-						    <th>Calorias</th>
-						    <th>Alterar</th>
-						    <th>Excluir</th>
-				  		</tr>
-			  		</thead>
-			  		<tbody>
-			  			<!--inicio do registro -->
-				  		<tr>
-						    <td>21/03/2017</td>
-						    <td>08:30</td> 
-						    <td>
-						    	<select>
-								    <option value="cafe">Café da manhã</option>
-								    <option value="almoço">Almoço</option>
-								    <option value="jantar">Jantar</option>
-								    <option value="lanche">Lanche leve</option>
-								    <option value="fruta">Fruta</option>
-						    	</select>
-						    </td>
-						    <td>Descrição da refeição</td>
-						    <td>450</td>
-						    <td>
-						    	<button type="button" class="btn btn-default btn-sm btn-warning">
-						    		<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-						    	</button>
-						    </td>
-
-						    <td>
-						    	<button type="button" class="btn btn-default btn-sm btn-danger">
-						    		<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-						    	</button>
-						    </td>
-					  	</tr>
-					  	<!--fim do registro -->
-
-			  			<!--inicio do registro -->
-				  		<tr>
-						    <td>20/03/2017</td>
-						    <td>08:30</td> 
-						    <td>
-						    	<select>
-								    <option value="cafe">Café da manhã</option>
-								    <option value="almoço">Almoço</option>
-								    <option value="jantar">Jantar</option>
-								    <option value="lanche">Lanche leve</option>
-								    <option value="fruta">Fruta</option>
-						    	</select>
-						    </td>
-						    <td>Descrição da refeição</td>
-						    <td>450</td>
-						    <td>
-						    	<button type="button" class="btn btn-default btn-sm btn-warning">
-						    		<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-						    	</button>
-						    </td>
-
-						    <td>
-						    	<button type="button" class="btn btn-default btn-sm btn-danger">
-						    		<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-						    	</button>
-						    </td>
-					  	</tr>
-					  	<!--fim do registro -->
-
-			  			<!--inicio do registro -->
-				  		<tr>
-						    <td>19/03/2017</td>
-						    <td>08:30</td> 
-						    <td>
-						    	<select>
-								    <option value="cafe">Café da manhã</option>
-								    <option value="almoço">Almoço</option>
-								    <option value="jantar">Jantar</option>
-								    <option value="lanche">Lanche leve</option>
-								    <option value="fruta">Fruta</option>
-						    	</select>
-						    </td>
-						    <td>Descrição da refeição</td>
-						    <td>450</td>
-						    <td>
-						    	<button type="button" class="btn btn-default btn-sm btn-warning">
-						    		<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-						    	</button>
-						    </td>
-
-						    <td>
-						    	<button type="button" class="btn btn-default btn-sm btn-danger">
-						    		<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-						    	</button>
-						    </td>
-					  	</tr>
-					  	<!--fim do registro -->					  						  	
-
-					  	<tr>
-						    <td>18/03/2017</td>
-						    <td>08:30</td> 
-						    <td>
-						    	<select>
-								    <option value="cafe">Café da manhã</option>
-								    <option value="almoço">Almoço</option>
-								    <option value="jantar">Jantar</option>
-								    <option value="lanche">Lanche leve</option>
-								    <option value="fruta">Fruta</option>
-						    	</select>
-						    </td>
-						    <td>Descrição da refeição</td>
-						    <td>450</td>
-						    
-						    <td>
-						    	<button type="button" class="btn btn-default btn-sm btn-warning">
-						    		<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-						    	</button>
-						    </td>
-
-						    <td>
-						    	<button type="button" class="btn btn-default btn-sm btn-danger">
-						    		<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-						    	</button>
-						    </td>
-					  	</tr>
-			    	</tbody>
-		  		</table>
-		    	<div class="container-fluid" id="submit-tabela">
-		  			<button type="button" class="btn btn-success btn-xs">Add <span class="glyphicon glyphicon-plus"></span>
-		  			</button>
+			<div class="jumbotron">
+				<div class="container-fluid">
+			  		<h1>Gerencie sua Alimentação</h1>
+			  		<p>Adicione, altere ou remova informações</p>
 		  		</div>
-	  		</div>
-		</div>
-	</section>
+			</div>
 		
-		<div class="line"></div>
+			<section>
+		  		<div class="table-responsive">	
+			  		<table class="table table-striped">
+			  			<thead>
+					    	<tr>
+							    <th>Data</th>
+							    <th>Horário</th> 
+							    <th>Tipo</th>
+							    <th>Descrição</th>
+							    <th>Calorias</th>
+							    <th>Alterar</th>
+							    <th>Excluir</th>
+					  		</tr>
+				  		</thead>
+				  		<tbody>
+				  		
+							<c:if test="${not empty mensagemRemover }">
+					    		<div class="alert alert-success">${mensagemRemover}</div>
+					  		</c:if>
+							<c:if test="${not empty erro }">
+					    		<div class="alert alert-danger">${erro}</div>
+					  		</c:if>
+							<c:if test="${not empty mensagemSucesso }">
+					    		<div class="alert alert-success">${mensagemSucesso}</div>
+					  		</c:if>
+				  			<!--inicio do registro -->
+				  			
+		
+							<c:forEach items="${lista}" var="obj">
+						  		<tr>
+						  			<td style="display:none"><c:out value="${obj.cd_alimento}"></c:out></td>
+								    <td><fmt:formatDate pattern="dd/MM/yyyy" value="${obj.dt_alimento.getTime()}" /></td>
+								    <td><fmt:formatDate pattern="HH:mm:ss" value="${obj.dt_alimento.getTime()}" /></td>
+									<td><c:out value="${obj.categoria.getDs_cat_alimento()}"></c:out></td>
+								    <td><c:out value="${obj.ds_alimento}"></c:out></td>
+								    <td><c:out value="${obj.nr_caloria}"></c:out></td>
+								    
+								    <td>
+								    	<button type="button" class="btn btn-default btn-sm btn-warning" name="alterar" onClick="redireciona('AlimentoServlet','action', 'alterar', '${obj.cd_alimento}' )">
+								    		<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+								    	</button>
+								    </td>
+		
+								    <td>
+								    	<button type="button" class="btn btn-default btn-sm btn-danger" name="remover" onClick="redireciona('AlimentoServlet','action', 'excluir', '${obj.cd_alimento}' )">
+								    		<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+								    	</button>
+								    </td>
+							  	</tr>
+							  	<!--fim do registro -->
+							</c:forEach>			  	
+				    	</tbody>
+			  		</table>
+					<button type="button" class="btn btn-primary btn-md" id="btn-todo" name="adicionar" onClick="redireciona('AlimentoServlet','action', 'adicionar')">Add </button>
+		  		</div>
+		</section>
 		
 		<section id="section-dicas">
-			<div class="container-fluid" id="container-dicas">
+			<div id="container-dicas">
 				<h2>Dicas de Alimentação</h2>
 			</div>
-			<div class="container-fluid">
+			<div>
 			<div class="row">
 			    <div class="col-sm-6 col-md-4">
 			  	  	<figure class="thumbnail">
@@ -201,6 +116,23 @@
 			</div>
 		</div>
 		</section>		
-	
+	</div>
+	<script>
+		function adicionarAlimento(param, nomeDoCampo, valorASerPassado, data, hora, categoria, descricao, calorias){
+			
+			var valorData = $('#data').val();
+			var valorHora = $('#hora').val();
+			var valorCategoria = $('#categoria').val();
+			var valorDescricao = $('#descricao').val();
+			var valorCalorias = $('#calorias').val();
+		  	
+			location.href=param+"?"+nomeDoCampo+"="+valorASerPassado+"&"+"data"+"="+valorData+"&"+"hora"+"="+valorHora+"&"+"categoria"+"="+valorCategoria+"&"+"descricao"+"="+valorDescricao+"&"+"calorias"+"="+valorCalorias;
+		}
+	</script>
+	<script>
+		function redireciona(param, nomeDoCampo, valorASerPassado, codigo){
+			  location.href=param+"?"+nomeDoCampo+"="+valorASerPassado +"&"+"codigo"+"="+codigo;
+			}
+	</script>
 		</jsp:attribute>
 </alimentacao:templateLogado>

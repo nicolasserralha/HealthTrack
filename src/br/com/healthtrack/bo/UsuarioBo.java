@@ -42,4 +42,11 @@ public class UsuarioBo {
 		}
 		return usuario.getCd_usuario();
 	}
+
+	public String buscaNome(int id) {
+		
+		UsuarioBean nomeUsuario = dao.buscar(id);
+		
+		return nomeUsuario.getNm_usuario();
+	}
 }

@@ -9,20 +9,16 @@
 		  	<li class="active">Pressão Arterial</li>
 		</ol>
 		
-		<div class="line"></div>
+		<div id="page-wrapper">
 		
-		<div class="jumbotron">
-			<div class="container-fluid">
-		  		<h1>Gerencie sua Pressão Arterial</h1>
-		  		<p>Adicione, altere ou remova informações</p>
-	  		</div>
-		</div>
+			<div class="jumbotron">
+				<div class="container-fluid">
+			  		<h1>Gerencie sua Pressão Arterial</h1>
+			  		<p>Adicione, altere ou remova informações</p>
+		  		</div>
+			</div>
 		
-		<div class="line"></div>
-	
-		<section class="container-fluid" id="section-pressao">
-			<div class="panel panel-default">
-			  	<div class="panel-heading panel-gray"><h3>Lista de Pressão Arterial</h3></div>
+			<section>
 		  		<div class="table-responsive">	
 			  		<table class="table table-striped">
 			  			<thead>
@@ -122,52 +118,50 @@
 						  	<!--fim do registro -->
 				    	</tbody>
 			  		</table>
-			    	<div class="container-fluid" id="submit-tabela">
-			  			<button type="button" class="btn btn-success btn-xs">Add <span class="glyphicon glyphicon-plus"></span></button>
-			  		</div>
+			    	<button type="button" class="btn btn-primary btn-md" id="btn-todo" name="adicionar" onClick="redireciona('PressaoServlet','action', 'adicionar')">Add </button>
 		  		</div>
-			</div>
-		</section>
-	
-		<div class="line"></div>
+			</section>
 		
-		<section id="section-dicas">
-			<div class="container-fluid" id="container-dicas">
-				<h2>Dicas sobre Pressão Arterial</h2>
-			</div>
-			<div class="container-fluid">
-				<div class="row">
-				    <div class="col-sm-6 col-md-4">
-				  	  	<figure class="thumbnail">
-				    		<img src="resources/img/pressao/cigarro_1920.jpg" alt="Quebrando cigarro ao meio">
-					      	<figcaption class="caption">
-						       	<h3>Cigarro</h3>
-						       	<p>O cigarro deve ser mantido apagado - e bem longe - se o desejo é permanecer distante dos riscos da hipertensão. O fumo é um dos principais fatores de risco para doença arterial coronariana. As substâncias tóxicas do cigarro provocam o enrijecimento das artérias, fato que compromete a passagem de fluxo sanguíneo e faz a pressão subir.</p>
-					      	</figcaption>
-					    </figure>
-					</div>
-					<div class="col-sm-6 col-md-4">
-				  	  	<figure class="thumbnail">
-				    		<img src="resources/img/pressao/lady_1920.jpg" alt="Mulher praticando exercício físico">
-					      	<figcaption class="caption">
-					        	<h3>Exercícios Físicos</h3>
-					        	<p>A prática regular de exercícios ajuda no controle dos níveis da pressão arterial, porque melhora o condicionamento físico do coração, fazendo com que ele não fique sobrecarregado.<br>
-					        	Alem disso, a prática regular de atividades provoca um efeito anti-hipertensivo por ajudar a queimar os quilos extras.</p>
-					      	</figcaption>
-					    </figure>
-					</div>
-				    <div class="col-sm-6 col-md-4">
-				  	  	<figure class="thumbnail">
-				    		<img src="resources/img/alimentacao/cenoura_1920.jpg" alt="Alimentação Saudável">
-					      	<figcaption class="caption">
-						        <h3>Alimentação Saudável</h3>
-						        <p>Há uma gama de alimentos que podem desencadear ou agravar a doença. O excesso de sal e de gorduras saturadas, assim como a ingestão de gorduras trans são amigos da hipertensão. Evitá-los é fundamental para manter a doença longe e ou para controlá-la.</p>		    
-					      	</figcaption>
-					    </figure>
+			<div class="line"></div>
+			
+			<section id="section-dicas">
+				<div id="container-dicas">
+					<h2>Dicas sobre Pressão Arterial</h2>
+				</div>
+				<div>
+					<div class="row">
+					    <div class="col-sm-6 col-md-4">
+					  	  	<figure class="thumbnail">
+					    		<img src="resources/img/pressao/cigarro_1920.jpg" alt="Quebrando cigarro ao meio">
+						      	<figcaption class="caption">
+							       	<h3>Cigarro</h3>
+							       	<p>O cigarro deve ser mantido apagado - e bem longe - se o desejo é permanecer distante dos riscos da hipertensão. O fumo é um dos principais fatores de risco para doença arterial coronariana. As substâncias tóxicas do cigarro provocam o enrijecimento das artérias, fato que compromete a passagem de fluxo sanguíneo e faz a pressão subir.</p>
+						      	</figcaption>
+						    </figure>
+						</div>
+						<div class="col-sm-6 col-md-4">
+					  	  	<figure class="thumbnail">
+					    		<img src="resources/img/pressao/lady_1920.jpg" alt="Mulher praticando exercício físico">
+						      	<figcaption class="caption">
+						        	<h3>Exercícios Físicos</h3>
+						        	<p>A prática regular de exercícios ajuda no controle dos níveis da pressão arterial, porque melhora o condicionamento físico do coração, fazendo com que ele não fique sobrecarregado.<br>
+						        	Alem disso, a prática regular de atividades provoca um efeito anti-hipertensivo por ajudar a queimar os quilos extras.</p>
+						      	</figcaption>
+						    </figure>
+						</div>
+					    <div class="col-sm-6 col-md-4">
+					  	  	<figure class="thumbnail">
+					    		<img src="resources/img/alimentacao/cenoura_1920.jpg" alt="Alimentação Saudável">
+						      	<figcaption class="caption">
+							        <h3>Alimentação Saudável</h3>
+							        <p>Há uma gama de alimentos que podem desencadear ou agravar a doença. O excesso de sal e de gorduras saturadas, assim como a ingestão de gorduras trans são amigos da hipertensão. Evitá-los é fundamental para manter a doença longe e ou para controlá-la.</p>		    
+						      	</figcaption>
+						    </figure>
+						</div>
 					</div>
 				</div>
-			</div>
-		</section>
+			</section>
+		</div>
 	
 		</jsp:attribute>
 </pressao:templateLogado>

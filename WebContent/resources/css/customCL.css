@@ -51,7 +51,6 @@ a.bg-primary:focus {
 }
 
 #content {
-    padding: 20px 0px 0px 0px;
     min-height: 100vh;
     width: 100%;
     transition: all 0.3s;
@@ -66,7 +65,14 @@ a.bg-primary:focus {
 	overflow-y: hidden;
 	width: 100%;
 	background-repeat: no-repeat;
-	margin-top: 40px;
+}
+
+footer {
+  background-color: gray; /* #7386D5 */
+  color: #fff;
+  width: 100%;
+  padding:50px 20px 50px 20px;
+  text-align: center;  
 }
 
 .top{
@@ -130,3 +136,4 @@ section.template .badges .badge-link:last-child {
 section.template .badges .badge-link img {
   height: 60px;
 }
+

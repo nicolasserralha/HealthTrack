@@ -7,7 +7,7 @@ public class AlimentoBean {
 
 	private int cd_alimento;
 	private int cd_usuario;
-	private int cd_cat_alimento;
+	private CategoriaAlimentoBean categoria;
 	private double nr_caloria;
 	private String ds_alimento;
 	private Calendar dt_alimento;
@@ -16,20 +16,20 @@ public class AlimentoBean {
 		super();
 	}
 	
-	public AlimentoBean(int cd_alimento, int cd_usuario, int cd_cat_alimento, double nr_caloria, String ds_alimento, Calendar dt_alimento) {
+	public AlimentoBean(int cd_alimento, int cd_usuario, CategoriaAlimentoBean categoria, double nr_caloria, String ds_alimento, Calendar dt_alimento) {
 		super();
 		this.cd_alimento = cd_alimento;
 		this.cd_usuario = cd_usuario;
-		this.cd_cat_alimento = cd_cat_alimento;
+		this.categoria = categoria;
 		this.nr_caloria = nr_caloria;
 		this.ds_alimento = ds_alimento;
 		this.dt_alimento = dt_alimento;
 	}
 	
-	public AlimentoBean(int cd_usuario, int cd_cat_alimento, double nr_caloria, String ds_alimento, Calendar dt_alimento) {
+	public AlimentoBean(int cd_usuario, CategoriaAlimentoBean categoria, double nr_caloria, String ds_alimento, Calendar dt_alimento) {
 		super();
 		this.cd_usuario = cd_usuario;
-		this.cd_cat_alimento = cd_cat_alimento;
+		this.categoria = categoria;
 		this.nr_caloria = nr_caloria;
 		this.ds_alimento = ds_alimento;
 		this.dt_alimento = dt_alimento;
@@ -47,11 +47,11 @@ public class AlimentoBean {
 	public void setCd_usuario(int cd_usuario) {
 		this.cd_usuario = cd_usuario;
 	}
-	public int getCd_cat_alimento() {
-		return cd_cat_alimento;
+	public CategoriaAlimentoBean getcategoria() {
+		return categoria;
 	}
-	public void setCd_cat_alimento(int cd_cat_alimento) {
-		this.cd_cat_alimento = cd_cat_alimento;
+	public void setcategoria(CategoriaAlimentoBean categoria) {
+		this.categoria = categoria;
 	}
 	public double getNr_caloria() {
 		return nr_caloria;

@@ -5,6 +5,20 @@ body {
   color: #444444;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
+#page-wrapper{
+	margin-top: 30px;
+}
+
+#btAdd{
+	padding: 2px;
+}
+
+
+.breadcrumb{
+	margin-top:20px;
+	margin-bottom:20px;
+}
+
 p {
   color: #777; }
 

@@ -61,7 +61,9 @@ public class AtividadeServlet extends HttpServlet {
 			
 			atividade.inserirAtividade(id, datax, hora, categoria, ds_atividade, nr_caloria);
 			lista = atividade.listarAtividade(id);
+			
 			request.setAttribute("lista", lista);
+			request.setAttribute("mensagemSucesso", "Adicionado com Sucesso");
 			request.getRequestDispatcher("atividade.jsp").forward(request, response);
 			break;
 			

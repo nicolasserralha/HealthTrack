@@ -7,16 +7,50 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>${title }</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="resources/css/custom.css">
-    <link rel="stylesheet" type="text/css" href="resources/css/customCL.css">
+        <link href="resources/css/bootstrap.min.css" rel="stylesheet">
+	<link href="resources/css/font-awesome.min.css" rel="stylesheet">
+	<link href="resources/css/datepicker3.css" rel="stylesheet">
+	<link href="resources/css/styles.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="resources/css/customCL.css">
+	<!--Custom Font-->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+	<!--[if lt IE 9]>
+	<script src="js/html5shiv.js"></script>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
 	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
 </head>
 <body>
 	<header>
-		<nav class="navbar navbar-default navbar-fixed-top blue">
+		<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse"><span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span></button>
+					<a class="navbar-brand" href="#"><span>Health</span>Track</a>
+					
+				      	<c:if test="${empty user }">
+				      		
+					    	<span class="navbar-text navbar-top-links text-danger">
+					    		${erroLogin }
+					      	</span> 
+					      	
+							<form class="form-inline nav navbar-top-links navbar-right" action="logar" method="post">
+							<div class="form-group" style="padding-top: 5px;">
+					      		<input class="form-control mr-sm-2" type="text" name="email" placeholder="E-mail">
+					        	<input class="form-control mr-sm-2" type="password" name="senha" placeholder="Senha">
+					        	<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Entrar</button>
+					        </div>
+					      	</form>
+						</c:if>
+				</div>
+			</div><!-- /.container-fluid -->
+		</nav>
+		<%-- <%-- <nav class="navbar navbar-default navbar-fixed-top blue">
 	  		<div class="container-fluid">
 		    	<div class="navbar-header blue">
 			      	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
@@ -57,7 +91,7 @@
 		      		
 				</div><!-- /.navbar-collapse -->
 			</div><!-- /.container-fluid -->
-		</nav>
+		</nav> --%>
 	</header>
 	
 	<div class="wrapper">

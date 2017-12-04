@@ -3,9 +3,13 @@
 */
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 
+.breadcrumb{
+	margin-top:20px;
+	margin-bottom:20px;
+}
+
 #errorpage{
 	margin-top: 100px;
-	
 }
 
 #form {

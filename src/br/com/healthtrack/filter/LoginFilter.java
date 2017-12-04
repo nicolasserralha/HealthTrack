@@ -33,67 +33,144 @@ public class LoginFilter implements Filter{
     if (session.getAttribute("user") == null && !url.endsWith("logar") && !url.contains("resources") && !url.contains("index")) {
     	req.setAttribute("erroLogin", "Entre com o usuário e senha!");
     	req.getRequestDispatcher("index.jsp").forward(request, response);
-    }else {
-    	if(url.contains("atividade")){
+    }
+    
+    else {
+    	
+      	if(url.contains("atividade")){
     		req.setAttribute("action", "listar");
     		req.getRequestDispatcher("AtividadeServlet").forward(req, response);
     		return;
     	}
-    	else if(url.endsWith("adicionar")){
-    		req.setAttribute("action", "adicionar");
-    		req.getRequestDispatcher("AtividadeServlet").forward(req, response);
+    	else if(url.contains("peso")){
+        		req.setAttribute("action", "listar");
+        		req.getRequestDispatcher("PesoServlet").forward(req, response);
+        		return;
+        	}
+    	else if(url.contains("pressao")){
+    		req.setAttribute("action", "listar");
+    		req.getRequestDispatcher("PressaoServlet").forward(req, response);
     		return;
     	}
-    	else if(url.contains("alterar")){
-    		req.setAttribute("action", "alterar");
-    		req.setAttribute("codigo", codigo);
-    		req.getRequestDispatcher("AtividadeServlet").forward(req, response);
-    		return;
-    	}
-    	else if(url.contains("excluir")){
-    		req.setAttribute("action", "excluir");
-    		req.setAttribute("codigo", codigo );
-    		req.getRequestDispatcher("AtividadeServlet").forward(req, response);
-    		return;
-    	}
-    	else if (url.contains("adicionarRegistro")){
-    		
-    	    String data = req.getParameter("data");
-    	    String hora = req.getParameter("hora");
-    	    String categoria = req.getParameter("categoria");
-    	    String descricao = req.getParameter("descricao");
-    	    String calorias = req.getParameter("calorias");
-    		
-    		req.setAttribute("action", "adicionarRegistro");
-    		req.setAttribute("data", data );
-    		req.setAttribute("hora", hora );
-    		req.setAttribute("categoria", categoria );
-    		req.setAttribute("descricao", descricao );
-    		req.setAttribute("calorias", calorias );
-    		req.getRequestDispatcher("AtividadeServlet").forward(req, response);
-    		return;
-    	}
-    	else if (url.contains("atualizarRegistro")){
-    		
-    	    String data = req.getParameter("data");
-    	    String hora = req.getParameter("hora");
-    	    String categoria = req.getParameter("categoria");
-    	    String descricao = req.getParameter("descricao");
-    	    String calorias = req.getParameter("calorias");
-    		
-    		req.setAttribute("action", "adicionarRegistro");
-    		req.setAttribute("data", data );
-    		req.setAttribute("hora", hora );
-    		req.setAttribute("categoria", categoria );
-    		req.setAttribute("descricao", descricao );
-    		req.setAttribute("calorias", calorias );
-    		req.getRequestDispatcher("AtividadeServlet").forward(req, response);
+    	else if(url.contains("alimentacao")){
+    		req.setAttribute("action", "listar");
+    		req.getRequestDispatcher("AlimentoServlet").forward(req, response);
     		return;
     	}
     	
-      chain.doFilter(req, response);
-    }
+      	
+        	//AQUI COMEÇA A PARTE DA ATIVIDADE
+    	if(url.contains("AtividadeServlet")){
+    		if(url.endsWith("adicionar")){
+	    		req.setAttribute("action", "adicionar");
+	    		req.getRequestDispatcher("AtividadeServlet").forward(req, response);
+	    		return;
+	    	}
+	    	else if(url.contains("alterar")){
+	    		req.setAttribute("action", "alterar");
+	    		req.setAttribute("codigo", codigo);
+	    		req.getRequestDispatcher("AtividadeServlet").forward(req, response);
+	    		return;
+	    	}
+	    	else if(url.contains("excluir")){
+	    		req.setAttribute("action", "excluir");
+	    		req.setAttribute("codigo", codigo );
+	    		req.getRequestDispatcher("AtividadeServlet").forward(req, response);
+	    		return;
+	    	}
+	    	else if (url.contains("adicionarRegistro")){
+	    		
+	    	    String data = req.getParameter("data");
+	    	    String hora = req.getParameter("hora");
+	    	    String categoria = req.getParameter("categoria");
+	    	    String descricao = req.getParameter("descricao");
+	    	    String calorias = req.getParameter("calorias");
+	    		
+	    		req.setAttribute("action", "adicionarRegistro");
+	    		req.setAttribute("data", data );
+	    		req.setAttribute("hora", hora );
+	    		req.setAttribute("categoria", categoria );
+	    		req.setAttribute("descricao", descricao );
+	    		req.setAttribute("calorias", calorias );
+	    		req.getRequestDispatcher("AtividadeServlet").forward(req, response);
+	    		return;
+	    	}
+	    	else if (url.contains("atualizarRegistro")){
+	    		
+	    	    String data = req.getParameter("data");
+	    	    String hora = req.getParameter("hora");
+	    	    String categoria = req.getParameter("categoria");
+	    	    String descricao = req.getParameter("descricao");
+	    	    String calorias = req.getParameter("calorias");
+	    		
+	    		req.setAttribute("action", "adicionarRegistro");
+	    		req.setAttribute("data", data );
+	    		req.setAttribute("hora", hora );
+	    		req.setAttribute("categoria", categoria );
+	    		req.setAttribute("descricao", descricao );
+	    		req.setAttribute("calorias", calorias );
+	    		req.getRequestDispatcher("AtividadeServlet").forward(req, response);
+	    		return;
+	    	}
+    	}
+    	//AQUI TERMINA A PARTE DA ATIVIDADE
+    	
+    	if(url.contains("AlimentoServlet")){
+    		if(url.endsWith("adicionar")){
+	    		req.setAttribute("action", "adicionar");
+	    		req.getRequestDispatcher("AtividadeServlet").forward(req, response);
+	    		return;
+	    	}
+	    	else if(url.contains("alterar")){
+	    		req.setAttribute("action", "alterar");
+	    		req.setAttribute("codigo", codigo);
+	    		req.getRequestDispatcher("AtividadeServlet").forward(req, response);
+	    		return;
+	    	}
+	    	else if(url.contains("excluir")){
+	    		req.setAttribute("action", "excluir");
+	    		req.setAttribute("codigo", codigo );
+	    		req.getRequestDispatcher("AtividadeServlet").forward(req, response);
+	    		return;
+	    	}
+	    	else if (url.contains("adicionarRegistro")){
+	    		
+	    	    String data = req.getParameter("data");
+	    	    String hora = req.getParameter("hora");
+	    	    String categoria = req.getParameter("categoria");
+	    	    String descricao = req.getParameter("descricao");
+	    	    String calorias = req.getParameter("calorias");
+	    		
+	    		req.setAttribute("action", "adicionarRegistro");
+	    		req.setAttribute("data", data );
+	    		req.setAttribute("hora", hora );
+	    		req.setAttribute("categoria", categoria );
+	    		req.setAttribute("descricao", descricao );
+	    		req.setAttribute("calorias", calorias );
+	    		req.getRequestDispatcher("AtividadeServlet").forward(req, response);
+	    		return;
+	    	}
+	    	else if (url.contains("atualizarRegistro")){
+	    		
+	    	    String data = req.getParameter("data");
+	    	    String hora = req.getParameter("hora");
+	    	    String categoria = req.getParameter("categoria");
+	    	    String descricao = req.getParameter("descricao");
+	    	    String calorias = req.getParameter("calorias");
+	    		
+	    		req.setAttribute("action", "adicionarRegistro");
+	    		req.setAttribute("data", data );
+	    		req.setAttribute("hora", hora );
+	    		req.setAttribute("categoria", categoria );
+	    		req.setAttribute("descricao", descricao );
+	    		req.setAttribute("calorias", calorias );
+	    		req.getRequestDispatcher("AtividadeServlet").forward(req, response);
+	    		return;
+	    	}
+    	}
+    	//AQUI TERMINA A PARTE DA ATIVIDADE
+    	chain.doFilter(req, response);
+    }	
   }
-
 }
 

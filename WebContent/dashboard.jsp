@@ -4,12 +4,10 @@
 <dashboard:templateLogado title="Dashboard">
 	<jsp:attribute name="content">
 	    
-		<ol class="breadcrumb" style="margin-top:20px; margin-bottom:20px;">
+		<ol class="breadcrumb" id="breadcrum">
 		  	<li><a href="index.jsp">Home</a></li>
 		  	<li class="active">Dashboard</li>
 		</ol>
-	
-		<div class="line"></div>
 	
         <div id="page-wrapper">
            
