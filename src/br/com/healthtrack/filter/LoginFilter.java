@@ -118,19 +118,19 @@ public class LoginFilter implements Filter{
     	if(url.contains("AlimentoServlet")){
     		if(url.endsWith("adicionar")){
 	    		req.setAttribute("action", "adicionar");
-	    		req.getRequestDispatcher("AtividadeServlet").forward(req, response);
+	    		req.getRequestDispatcher("AlimentoServlet").forward(req, response);
 	    		return;
 	    	}
 	    	else if(url.contains("alterar")){
 	    		req.setAttribute("action", "alterar");
 	    		req.setAttribute("codigo", codigo);
-	    		req.getRequestDispatcher("AtividadeServlet").forward(req, response);
+	    		req.getRequestDispatcher("AlimentoServlet").forward(req, response);
 	    		return;
 	    	}
 	    	else if(url.contains("excluir")){
 	    		req.setAttribute("action", "excluir");
 	    		req.setAttribute("codigo", codigo );
-	    		req.getRequestDispatcher("AtividadeServlet").forward(req, response);
+	    		req.getRequestDispatcher("AlimentoServlet").forward(req, response);
 	    		return;
 	    	}
 	    	else if (url.contains("adicionarRegistro")){

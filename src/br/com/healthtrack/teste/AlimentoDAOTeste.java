@@ -38,7 +38,7 @@ public class AlimentoDAOTeste {
 		
 		//cadastrar
 		try {
-			alimento.setCd_cat_alimento(2);
+			/*alimento.setCd_cat_alimento(2);*/
 			alimento.setCd_usuario(1);
 			alimento.setDs_alimento("blablaslealsda");
 			alimento.setDt_alimento(Calendar.getInstance());
