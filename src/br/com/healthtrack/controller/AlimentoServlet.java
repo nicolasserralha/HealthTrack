@@ -71,10 +71,11 @@ public class AlimentoServlet extends HttpServlet {
 			AlimentoBean alimentoAlterar = alimento.buscarAlimento(codigo);
 			request.setAttribute("objeto", alimentoAlterar);
 			request.setAttribute("alterar", "sim");
+			acao = null;
 			request.getRequestDispatcher("alimentacao.jsp").forward(request, response);
 			break;
 			
-		case "alteraralimento":
+		case "atualizarRegistro":
 			String dataxx = request.getAttribute("data").toString();
 			String horax = request.getAttribute("hora").toString();
 			String categoriaxx = request.getAttribute("categoria").toString();
@@ -86,6 +87,7 @@ public class AlimentoServlet extends HttpServlet {
 			alimento.editarAlimento(id, dataxx, horax, categoriaxz, ds_alimentox, nr_caloriax);
 			lista = alimento.listarAlimento(id);
 			request.setAttribute("lista", lista);
+			request.setAttribute("mensagemSucesso", "Atualizado com Sucesso");
 			request.getRequestDispatcher("alimentacao.jsp").forward(request, response);
 			break;
 			

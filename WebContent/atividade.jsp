@@ -89,7 +89,7 @@
 										<td><input type="number" name="calorias" class="form-control" id="calorias" value="${requestScope.objeto.nr_caloria}"></td>
 										<td>
 										<!-- <form action="AtividadeServlet" method="GET"> -->
-											<button type="button" class="btn btn-success btn-sm" name="adicionarAtividade" onClick="adicionarAtividade('AtividadeServlet','action', 'atualizarRegistro', 'data' , 'hora', 'categoria', 'descricao', 'calorias' )">
+											<button type="button" class="btn btn-success btn-sm" onClick="adicionarAtividade('AtividadeServlet','action', 'atualizarRegistro', 'data' , 'hora', 'categoria', 'descricao', 'calorias' )">
 									    		<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
 									    	</button>
 								    	<!-- </form> -->
@@ -114,7 +114,7 @@
 										<td>
 										<!-- <form action="AtividadeServlet" method="GET"> -->
 										<div>
-											<button type="button" class="btn btn-success btn-sm" name="adicionarAtividade" onClick="adicionarAtividade('AtividadeServlet','action', 'adicionarRegistro', 'data' , 'hora', 'categoria', 'descricao', 'calorias' )">
+											<button type="button" class="btn btn-success btn-sm" onClick="adicionarAtividade('AtividadeServlet','action', 'atualizarRegistro', 'data' , 'hora', 'categoria', 'descricao', 'calorias' )">
 									    		<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
 									    	</button>
 									    </div>
@@ -125,7 +125,7 @@
 								
 					    	</tbody>
 				  		</table>
-			    		<button type="button" class="btn btn-primary btn-md" id="btn-todo" name="adicionar" onClick="redireciona('AtividadeServlet','action', 'adicionar')">Add </button>
+			    		<button type="button" class="btn btn-primary btn-md" id="btn-todo" onClick="redireciona('AtividadeServlet','action', 'adicionar')">Add </button>
 			  		</div>
 				<!-- </div> -->
 			</section>

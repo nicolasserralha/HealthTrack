@@ -75,8 +75,8 @@
 								
 							<c:if test="${not empty alterar }">
 									<tr>
-				     			    	<td> <input type="date" name="data" class="form-control" id="data" value="${dataObjeto}"> </td>
-				     			    	<td> <input type="time" name="hora" class="form-control" id="hora" placeholder="horário" value="${horaObjeto}"> </td>
+				     			    	<td> <input type="date" name="data" class="form-control" id="data" value="${requestScope.objeto.dt_alimento}"> </td>
+				     			    	<td> <input type="time" name="hora" class="form-control" id="hora" placeholder="horário" value="${requestScope.objeto.dt_alimento}"> </td>
 				     			    	<td>
 									   		<select name="categoria" id="categoria">
 											    <option value="1" selected>Café da Manhã</option>
@@ -89,11 +89,9 @@
 										<td><input type="text" name="descricao" class="form-control" id="descricao" value="${requestScope.objeto.ds_alimento}"></td>
 										<td><input type="number" name="calorias" class="form-control" id="calorias" value="${requestScope.objeto.nr_caloria}"></td>
 										<td>
-										<!-- <form action="AtividadeServlet" method="GET"> -->
-											<button type="button" class="btn btn-success btn-sm" name="adicionarAtividade" onClick="adicionarAlimento('AlimentoServlet','action', 'atualizarRegistro', 'data' , 'hora', 'categoria', 'descricao', 'calorias' )">
+											<button type="button" class="btn btn-success btn-sm" name="atualizarRegistro" onClick="adicionarAlimento('AlimentoServlet','action', 'atualizarRegistro', 'data' , 'hora', 'categoria', 'descricao', 'calorias' )">
 									    		<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
 									    	</button>
-								    	<!-- </form> -->
 									    </td>
 									</tr>
 								</c:if>
@@ -115,13 +113,11 @@
 										<td> <input type="text" name="descricao" class="form-control" id="descricao" placeholder="descrição"> </td>
 										<td> <input type="number" name="calorias" class="form-control" id="calorias" placeholder="calorias"> </td>
 										<td>
-										<!-- <form action="AtividadeServlet" method="GET"> -->
 										<div>
-											<button type="button" class="btn btn-success btn-sm" name="adicionarAtividade" onClick="adicionarAlimento('AlimentoServlet','action', 'adicionarRegistro', 'data' , 'hora', 'categoria', 'descricao', 'calorias' )">
+											<button type="button" class="btn btn-success btn-sm" name="adicionarRegistro" onClick="adicionarAlimento('AlimentoServlet','action', 'adicionarRegistro', 'data' , 'hora', 'categoria', 'descricao', 'calorias' )">
 									    		<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
 									    	</button>
 									    </div>
-								    	<!-- </form> -->
 									    </td>
 									</tr>
 								</c:if>	  	

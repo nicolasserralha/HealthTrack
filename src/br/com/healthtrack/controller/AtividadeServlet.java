@@ -29,6 +29,7 @@ public class AtividadeServlet extends HttpServlet {
     }
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String url = request.getRequestURI();
 		String acao = request.getAttribute("action").toString();
 		AtividadeBo atividade = new AtividadeBo();
 		List<AtividadeBean> lista;
@@ -74,10 +75,12 @@ public class AtividadeServlet extends HttpServlet {
 			AtividadeBean atividadeAlterar = atividade.buscarAtividade(codigo);
 			request.setAttribute("objeto", atividadeAlterar);
 			request.setAttribute("alterar", "sim");
+			acao = null;
+			request.setAttribute("action", "atualizarRegistro");
 			request.getRequestDispatcher("atividade.jsp").forward(request, response);
 			break;
 			
-		case "alterarAtividade":
+		case "atualizarRegistro":
 			String dataxx = request.getAttribute("data").toString();
 			String horax = request.getAttribute("hora").toString();
 			String categoriaxx = request.getAttribute("categoria").toString();
@@ -89,6 +92,7 @@ public class AtividadeServlet extends HttpServlet {
 			atividade.editarAtividade(id, dataxx, horax, categoriaxz, ds_atividadex, nr_caloriax);
 			lista = atividade.listarAtividade(id);
 			request.setAttribute("lista", lista);
+			request.setAttribute("mensagemSucesso", "Atualizado com Sucesso");
 			request.getRequestDispatcher("atividade.jsp").forward(request, response);
 			break;
 			
