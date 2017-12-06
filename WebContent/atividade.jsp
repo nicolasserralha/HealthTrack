@@ -75,6 +75,7 @@
 													
 				      			<c:if test="${not empty alterar }">
 									<tr>
+										<td style="display:none"><input type="text" name="codigo" class="form-control" id="codigo" value="${requestScope.objeto.cd_atividade}"></td>
 				     			    	<td><input type="date" name="data" class="form-control" id="data" value="${dataObjeto}"></td>
 				     			    	<td> <input type="time" name="hora" class="form-control" id="hora" placeholder="horário" value="${horaObjeto}"> </td>
 				     			    	<td>
@@ -88,11 +89,9 @@
 										<td><input type="text" name="descricao" class="form-control" id="descricao" value="${requestScope.objeto.ds_atividade}"></td>
 										<td><input type="number" name="calorias" class="form-control" id="calorias" value="${requestScope.objeto.nr_caloria}"></td>
 										<td>
-										<!-- <form action="AtividadeServlet" method="GET"> -->
-											<button type="button" class="btn btn-success btn-sm" onClick="adicionarAtividade('AtividadeServlet','action', 'atualizarRegistro', 'data' , 'hora', 'categoria', 'descricao', 'calorias' )">
+											<button type="button" class="btn btn-success btn-sm" onClick="alterarAtividade('AtividadeServlet','action', 'atualizarRegistro', 'codigo', 'data', 'hora', 'categoria', 'descricao', 'calorias' )">
 									    		<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
 									    	</button>
-								    	<!-- </form> -->
 									    </td>
 									</tr>
 								</c:if>
@@ -182,6 +181,19 @@
 			var valorCalorias = $('#calorias').val();
 		  	
 			location.href=param+"?"+nomeDoCampo+"="+valorASerPassado+"&"+"data"+"="+valorData+"&"+"hora"+"="+valorHora+"&"+"categoria"+"="+valorCategoria+"&"+"descricao"+"="+valorDescricao+"&"+"calorias"+"="+valorCalorias;
+		}
+	</script>
+		<script>
+		function alterarAtividade(param, nomeDoCampo, valorASerPassado, codigo, data, hora, categoria, descricao, calorias){
+			
+			var valorCodigo = $('#codigo').val();
+			var valorData = $('#data').val();
+			var valorHora = $('#hora').val();
+			var valorCategoria = $('#categoria').val();
+			var valorDescricao = $('#descricao').val();
+			var valorCalorias = $('#calorias').val();
+		  	
+			location.href=param+"?"+nomeDoCampo+"="+valorASerPassado+"&"+"codigo"+"="+valorCodigo+"&"+"data"+"="+valorData+"&"+"hora"+"="+valorHora+"&"+"categoria"+"="+valorCategoria+"&"+"descricao"+"="+valorDescricao+"&"+"calorias"+"="+valorCalorias;
 		}
 	</script>
 	<script>

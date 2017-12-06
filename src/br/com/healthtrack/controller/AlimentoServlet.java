@@ -71,7 +71,6 @@ public class AlimentoServlet extends HttpServlet {
 			AlimentoBean alimentoAlterar = alimento.buscarAlimento(codigo);
 			request.setAttribute("objeto", alimentoAlterar);
 			request.setAttribute("alterar", "sim");
-			acao = null;
 			request.getRequestDispatcher("alimentacao.jsp").forward(request, response);
 			break;
 			
@@ -83,8 +82,10 @@ public class AlimentoServlet extends HttpServlet {
 			String ds_alimentox = request.getAttribute("descricao").toString();
 			String caloriasx = request.getAttribute("calorias").toString();
 			Double nr_caloriax = Double.parseDouble(caloriasx);
+			String codigoString = request.getAttribute("codigo").toString();
+			int codigoInt = Integer.parseInt(codigoString);
 			
-			alimento.editarAlimento(id, dataxx, horax, categoriaxz, ds_alimentox, nr_caloriax);
+			alimento.editarAlimento(id, codigoInt, dataxx, horax, categoriaxz, ds_alimentox, nr_caloriax);
 			lista = alimento.listarAlimento(id);
 			request.setAttribute("lista", lista);
 			request.setAttribute("mensagemSucesso", "Atualizado com Sucesso");

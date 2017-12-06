@@ -73,7 +73,7 @@ public class AtividadeBo {
 		return atividade;
 	}
 	
-	public AtividadeBean editarAtividade(int codigoUsuario, String datax, String hora, int categoriax, String ds_atividade, Double nr_caloria){
+	public AtividadeBean editarAtividade(int codigoUsuario, int codigoAtividade, String datax, String hora, int categoriax, String ds_atividade, Double nr_caloria){
 		
 		String dataFormatada = "";
 		
@@ -100,7 +100,7 @@ public class AtividadeBo {
 		} 
 		
 		CategoriaAtividadeBean categoria = dao.buscarCategoria(categoriax);
-		AtividadeBean atividade = new AtividadeBean(codigoUsuario, categoria, nr_caloria, ds_atividade, dt_atividade);
+		AtividadeBean atividade = new AtividadeBean(codigoAtividade, codigoUsuario, categoria, nr_caloria, ds_atividade, dt_atividade);
 		
 		try {
 			dao.atualizar(atividade);

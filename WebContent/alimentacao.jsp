@@ -75,6 +75,7 @@
 								
 							<c:if test="${not empty alterar }">
 									<tr>
+										<td style="display:none"><input type="text" name="codigo" class="form-control" id="codigo" value="${requestScope.objeto.cd_alimento}"></td>
 				     			    	<td> <input type="date" name="data" class="form-control" id="data" value="${requestScope.objeto.dt_alimento}"> </td>
 				     			    	<td> <input type="time" name="hora" class="form-control" id="hora" placeholder="horário" value="${requestScope.objeto.dt_alimento}"> </td>
 				     			    	<td>
@@ -89,7 +90,7 @@
 										<td><input type="text" name="descricao" class="form-control" id="descricao" value="${requestScope.objeto.ds_alimento}"></td>
 										<td><input type="number" name="calorias" class="form-control" id="calorias" value="${requestScope.objeto.nr_caloria}"></td>
 										<td>
-											<button type="button" class="btn btn-success btn-sm" name="atualizarRegistro" onClick="adicionarAlimento('AlimentoServlet','action', 'atualizarRegistro', 'data' , 'hora', 'categoria', 'descricao', 'calorias' )">
+											<button type="button" class="btn btn-success btn-sm" value="atualizarRegistro" name="atualizarRegistro" onClick="alterarAlimento('AlimentoServlet','action', 'atualizarRegistro', 'data' , 'hora', 'categoria', 'descricao', 'calorias' )">
 									    		<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
 									    	</button>
 									    </td>
@@ -114,7 +115,7 @@
 										<td> <input type="number" name="calorias" class="form-control" id="calorias" placeholder="calorias"> </td>
 										<td>
 										<div>
-											<button type="button" class="btn btn-success btn-sm" name="adicionarRegistro" onClick="adicionarAlimento('AlimentoServlet','action', 'adicionarRegistro', 'data' , 'hora', 'categoria', 'descricao', 'calorias' )">
+											<button type="button" class="btn btn-success btn-sm" onClick="adicionarAlimento('AlimentoServlet','action', 'adicionarRegistro', 'data' , 'hora', 'categoria', 'descricao', 'calorias' )">
 									    		<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
 									    	</button>
 									    </div>
@@ -178,6 +179,19 @@
 			location.href=param+"?"+nomeDoCampo+"="+valorASerPassado+"&"+"data"+"="+valorData+"&"+"hora"+"="+valorHora+"&"+"categoria"+"="+valorCategoria+"&"+"descricao"+"="+valorDescricao+"&"+"calorias"+"="+valorCalorias;
 		}
 	</script>
+	<script>
+		function alterarAlimento(param, nomeDoCampo, valorASerPassado, codigo, data, hora, categoria, descricao, calorias){
+			
+			var valorCodigo = $('#codigo').val();
+			var valorData = $('#data').val();
+			var valorHora = $('#hora').val();
+			var valorCategoria = $('#categoria').val();
+			var valorDescricao = $('#descricao').val();
+			var valorCalorias = $('#calorias').val();
+		  	
+			location.href=param+"?"+nomeDoCampo+"="+valorASerPassado+"&"+"codigo"+"="+valorCodigo+"&"+"data"+"="+valorData+"&"+"hora"+"="+valorHora+"&"+"categoria"+"="+valorCategoria+"&"+"descricao"+"="+valorDescricao+"&"+"calorias"+"="+valorCalorias;
+		}
+	</script>	
 	<script>
 		function redireciona(param, nomeDoCampo, valorASerPassado, codigo){
 			  location.href=param+"?"+nomeDoCampo+"="+valorASerPassado +"&"+"codigo"+"="+codigo;

@@ -75,8 +75,6 @@ public class AtividadeServlet extends HttpServlet {
 			AtividadeBean atividadeAlterar = atividade.buscarAtividade(codigo);
 			request.setAttribute("objeto", atividadeAlterar);
 			request.setAttribute("alterar", "sim");
-			acao = null;
-			request.setAttribute("action", "atualizarRegistro");
 			request.getRequestDispatcher("atividade.jsp").forward(request, response);
 			break;
 			
@@ -88,8 +86,10 @@ public class AtividadeServlet extends HttpServlet {
 			String ds_atividadex = request.getAttribute("descricao").toString();
 			String caloriasx = request.getAttribute("calorias").toString();
 			Double nr_caloriax = Double.parseDouble(caloriasx);
+			String codigoString = request.getAttribute("codigo").toString();
+			int codigoInt = Integer.parseInt(codigoString);
 			
-			atividade.editarAtividade(id, dataxx, horax, categoriaxz, ds_atividadex, nr_caloriax);
+			atividade.editarAtividade(id, codigoInt, dataxx, horax, categoriaxz, ds_atividadex, nr_caloriax);
 			lista = atividade.listarAtividade(id);
 			request.setAttribute("lista", lista);
 			request.setAttribute("mensagemSucesso", "Atualizado com Sucesso");
@@ -126,5 +126,5 @@ public class AtividadeServlet extends HttpServlet {
 			request.getRequestDispatcher("atividade.jsp").forward(request, response);
 		}
 	}
-	
+
 }

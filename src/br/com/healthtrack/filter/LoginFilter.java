@@ -89,14 +89,15 @@ public class LoginFilter implements Filter {
 					req.getRequestDispatcher("AtividadeServlet").forward(req, response);
 					return;
 				} else if (url.contains("atualizarRegistro")) {
-
+					
 					String data = req.getParameter("data");
 					String hora = req.getParameter("hora");
 					String categoria = req.getParameter("categoria");
 					String descricao = req.getParameter("descricao");
 					String calorias = req.getParameter("calorias");
-
+					
 					req.setAttribute("action", "atualizarRegistro");
+					req.setAttribute("codigo", codigo);
 					req.setAttribute("data", data);
 					req.setAttribute("hora", hora);
 					req.setAttribute("categoria", categoria);
@@ -137,7 +138,7 @@ public class LoginFilter implements Filter {
 					req.setAttribute("categoria", categoria);
 					req.setAttribute("descricao", descricao);
 					req.setAttribute("calorias", calorias);
-					req.getRequestDispatcher("AtividadeServlet").forward(req, response);
+					req.getRequestDispatcher("AlimentoServlet").forward(req, response);
 					return;
 				} else if (url.contains("atualizarRegistro")) {
 
@@ -148,6 +149,7 @@ public class LoginFilter implements Filter {
 					String calorias = req.getParameter("calorias");
 
 					req.setAttribute("action", "atualizarRegistro");
+					req.setAttribute("codigo", codigo);
 					req.setAttribute("data", data);
 					req.setAttribute("hora", hora);
 					req.setAttribute("categoria", categoria);

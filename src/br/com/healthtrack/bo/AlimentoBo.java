@@ -73,7 +73,7 @@ public class AlimentoBo {
 		return alimento;
 	}
 	
-	public AlimentoBean editarAlimento(int codigoUsuario, String datax, String hora, int categoriax, String ds_alimento, Double nr_caloria){
+	public AlimentoBean editarAlimento(int codigoUsuario, int codigo, String datax, String hora, int categoriax, String ds_alimento, Double nr_caloria){
 		
 		String dataFormatada = "";
 		
@@ -100,7 +100,7 @@ public class AlimentoBo {
 		} 
 		
 		CategoriaAlimentoBean categoria = dao.buscarCategoria(categoriax);
-		AlimentoBean alimento = new AlimentoBean(codigoUsuario, categoria, nr_caloria, ds_alimento, dt_alimento);
+		AlimentoBean alimento = new AlimentoBean(codigo, codigoUsuario, categoria, nr_caloria, ds_alimento, dt_alimento);
 		
 		try {
 			dao.atualizar(alimento);
