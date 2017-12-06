@@ -136,7 +136,7 @@ public class PesoDAO implements IPesoDAO {
 		
 		try {
 			conexao = HealthTrackDBManager.getInstance().getConnection();
-			String sql = "SELECT * FROM T_REL_PESO WHERE CD_USUARIO = ? order by DT_ATIVIDADE DESC";
+			String sql = "SELECT * FROM T_REL_PESO WHERE CD_USUARIO = ? order by DT_PESO DESC";
 			stmt = conexao.prepareStatement(sql, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
 			stmt.setInt(1, codigoUsuario);
 			ResultSet rs = stmt.executeQuery();

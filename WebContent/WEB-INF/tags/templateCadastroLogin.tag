@@ -31,8 +31,11 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span></button>
-					<a class="navbar-brand" href="#"><span>Health</span>Track</a>
-					
+						<a class="navbar-brand" href="#"><span>Health</span>Track</a>
+						<ul class="nav navbar-nav">
+				        	<li class="active" style="padding-top: 5px"><a href="cadastro.jsp">Cadastre-se <span class="sr-only">(current)</span></a></li>
+						</ul>
+				      	
 				      	<c:if test="${empty user }">
 				      		
 					    	<span class="navbar-text navbar-top-links text-danger">

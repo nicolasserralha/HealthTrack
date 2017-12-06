@@ -31,7 +31,7 @@ public class LoginFilter implements Filter {
 		}
 
 		if (session.getAttribute("user") == null && !url.endsWith("logar") && !url.contains("resources")
-				&& !url.contains("index")) {
+				&& !url.contains("index") && !url.contains("cadastrar") && !url.contains("cadastro")) {
 			req.setAttribute("erroLogin", "Entre com o usuário e senha!");
 			req.getRequestDispatcher("index.jsp").forward(request, response);
 		}

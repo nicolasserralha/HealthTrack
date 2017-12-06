@@ -134,7 +134,7 @@ public class PressaoDAO implements IPressaoDAO{
 		ResultSet rs = null;
 		try {
 			conexao = HealthTrackDBManager.getInstance().getConnection();
-			String sql = "SELECT * FROM T_REL_PRESSAO WHERE CD_USUARIO = ? order by DT_ATIVIDADE DESC";
+			String sql = "SELECT * FROM T_REL_PRESSAO WHERE CD_USUARIO = ? order by DT_PRESSAO DESC";
 			stmt = conexao.prepareStatement(sql, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
 			stmt.setInt(1, codigoUsuario);
 			rs = stmt.executeQuery();
